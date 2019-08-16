@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.endava.sinergy",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.2.0",
+    "applicationType": "monolith",
+    "baseName": "sinergy",
+    "packageName": "com.endava.sinergy",
+    "packageFolder": "com/endava/sinergy",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWM2ZDZmNTBjMzZmZTVjOWM4NWUxNThjZmI4NjAzNzE5MjZlMGQ1ZDk2MTM5YWNkMGNhYjFhNTdjM2ZjMTM1ZWIzN2FkYzVjMGE0MDBkNmRiNWFhNDYxYzViNzMzZjgxNGZiYzJlMDk3OWNiMjIxYTU3ZDVhYWI1YzZlYjQxZmM=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "journal",
+    "clientThemeVariant": "primary",
+    "testFrameworks": ["cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "es"],
+    "blueprints": []
+  }
+}
