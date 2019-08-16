@@ -1,0 +1,30 @@
+{
+    "name": "Challenge",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "purpose",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "challenge",
+            "relationshipName": "activity"
+        }
+    ],
+    "changelogDate": "20190816170243",
+    "entityTableName": "challenge",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

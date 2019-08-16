@@ -1,0 +1,38 @@
+{
+    "name": "UserProfile",
+    "fields": [
+        {
+            "fieldName": "grade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "voice",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agenda",
+            "otherEntityRelationshipName": "userProfile",
+            "relationshipName": "agenda"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "season",
+            "otherEntityRelationshipName": "userProfile",
+            "relationshipName": "season",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190816170240",
+    "entityTableName": "user_profile",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

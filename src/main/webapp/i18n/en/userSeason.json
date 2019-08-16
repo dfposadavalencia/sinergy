@@ -1,0 +1,23 @@
+{
+  "sinergyApp": {
+    "userSeason": {
+      "home": {
+        "title": "User Seasons",
+        "createLabel": "Create a new User Season",
+        "createOrEditLabel": "Create or edit a User Season",
+        "notFound": "No User Seasons found"
+      },
+      "created": "A new User Season is created with identifier {{ param }}",
+      "updated": "A User Season is updated with identifier {{ param }}",
+      "deleted": "A User Season is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete User Season {{ id }}?"
+      },
+      "detail": {
+        "title": "User Season"
+      },
+      "ranking": "Ranking",
+      "score": "Score"
+    }
+  }
+}

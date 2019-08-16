@@ -1,0 +1,40 @@
+{
+    "name": "Agenda",
+    "fields": [
+        {
+            "fieldName": "attendance",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "activityScoring",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "moderatorScoring",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "userProfile",
+            "otherEntityName": "userProfile",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "agenda",
+            "relationshipName": "activity"
+        }
+    ],
+    "changelogDate": "20190816170247",
+    "entityTableName": "agenda",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

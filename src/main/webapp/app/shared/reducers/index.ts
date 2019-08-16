@@ -12,6 +12,38 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import userProfile, {
+  UserProfileState
+} from 'app/entities/user-profile/user-profile.reducer';
+// prettier-ignore
+import userSeason, {
+  UserSeasonState
+} from 'app/entities/user-season/user-season.reducer';
+// prettier-ignore
+import season, {
+  SeasonState
+} from 'app/entities/season/season.reducer';
+// prettier-ignore
+import challenge, {
+  ChallengeState
+} from 'app/entities/challenge/challenge.reducer';
+// prettier-ignore
+import activity, {
+  ActivityState
+} from 'app/entities/activity/activity.reducer';
+// prettier-ignore
+import tag, {
+  TagState
+} from 'app/entities/tag/tag.reducer';
+// prettier-ignore
+import field, {
+  FieldState
+} from 'app/entities/field/field.reducer';
+// prettier-ignore
+import agenda, {
+  AgendaState
+} from 'app/entities/agenda/agenda.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -25,6 +57,14 @@ export interface IRootState {
   readonly passwordReset: PasswordResetState;
   readonly password: PasswordState;
   readonly settings: SettingsState;
+  readonly userProfile: UserProfileState;
+  readonly userSeason: UserSeasonState;
+  readonly season: SeasonState;
+  readonly challenge: ChallengeState;
+  readonly activity: ActivityState;
+  readonly tag: TagState;
+  readonly field: FieldState;
+  readonly agenda: AgendaState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -40,6 +80,14 @@ const rootReducer = combineReducers<IRootState>({
   passwordReset,
   password,
   settings,
+  userProfile,
+  userSeason,
+  season,
+  challenge,
+  activity,
+  tag,
+  field,
+  agenda,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });

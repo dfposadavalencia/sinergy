@@ -1,0 +1,64 @@
+entity UserProfile {
+    grade String
+    voice String
+}
+
+entity UserSeason {
+    ranking String
+    score Integer required
+}
+
+entity Season {
+    name String
+    startDate Instant
+    endDate Instant
+}
+
+entity Challenge {
+    name String
+    purpose String
+}
+
+entity Activity {
+    name String
+    place String
+    startDate Instant
+    endDate Instant
+    points Integer
+}
+
+entity Tag {
+    label String required
+}
+
+entity Field {
+    name String
+    value String
+}
+
+entity Agenda {
+    attendance Boolean
+    activityScoring Integer
+    moderatorScoring Integer
+}
+
+
+relationship OneToMany {
+    Challenge{activity} to Activity,
+    UserProfile{agenda} to Agenda,
+    Agenda{activity} to Activity,
+    
+}
+
+relationship ManyToMany {
+    UserProfile{season} to Season{userProfile},
+    Tag{field} to Field{tag},
+    Activity{tag} to Tag{activity}
+}
+
+// Set pagination options
+paginate UserProfile, Agenda, Season, Challenge, Activity, Tag, Field with infinite-scroll
+
+
+// Set service options to all
+service all with serviceImpl 
