@@ -77,8 +77,8 @@ export class SeasonUpdate extends React.Component<ISeasonUpdateProps, ISeasonUpd
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.season.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.season.home.createOrEditLabel">Create or edit a Season</Translate>
+            <h2 id="synergyApp.season.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.season.home.createOrEditLabel">Create or edit a Season</Translate>
             </h2>
           </Col>
         </Row>
@@ -98,13 +98,13 @@ export class SeasonUpdate extends React.Component<ISeasonUpdateProps, ISeasonUpd
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="season-name">
-                    <Translate contentKey="sinergyApp.season.name">Name</Translate>
+                    <Translate contentKey="synergyApp.season.name">Name</Translate>
                   </Label>
                   <AvField id="season-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="startDateLabel" for="season-startDate">
-                    <Translate contentKey="sinergyApp.season.startDate">Start Date</Translate>
+                    <Translate contentKey="synergyApp.season.startDate">Start Date</Translate>
                   </Label>
                   <AvInput
                     id="season-startDate"
@@ -117,7 +117,7 @@ export class SeasonUpdate extends React.Component<ISeasonUpdateProps, ISeasonUpd
                 </AvGroup>
                 <AvGroup>
                   <Label id="endDateLabel" for="season-endDate">
-                    <Translate contentKey="sinergyApp.season.endDate">End Date</Translate>
+                    <Translate contentKey="synergyApp.season.endDate">End Date</Translate>
                   </Label>
                   <AvInput
                     id="season-endDate"

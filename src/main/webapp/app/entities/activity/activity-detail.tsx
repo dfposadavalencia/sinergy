@@ -25,24 +25,24 @@ export class ActivityDetail extends React.Component<IActivityDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.activity.detail.title">Activity</Translate> [<b>{activityEntity.id}</b>]
+            <Translate contentKey="synergyApp.activity.detail.title">Activity</Translate> [<b>{activityEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="sinergyApp.activity.name">Name</Translate>
+                <Translate contentKey="synergyApp.activity.name">Name</Translate>
               </span>
             </dt>
             <dd>{activityEntity.name}</dd>
             <dt>
               <span id="place">
-                <Translate contentKey="sinergyApp.activity.place">Place</Translate>
+                <Translate contentKey="synergyApp.activity.place">Place</Translate>
               </span>
             </dt>
             <dd>{activityEntity.place}</dd>
             <dt>
               <span id="startDate">
-                <Translate contentKey="sinergyApp.activity.startDate">Start Date</Translate>
+                <Translate contentKey="synergyApp.activity.startDate">Start Date</Translate>
               </span>
             </dt>
             <dd>
@@ -50,7 +50,7 @@ export class ActivityDetail extends React.Component<IActivityDetailProps> {
             </dd>
             <dt>
               <span id="endDate">
-                <Translate contentKey="sinergyApp.activity.endDate">End Date</Translate>
+                <Translate contentKey="synergyApp.activity.endDate">End Date</Translate>
               </span>
             </dt>
             <dd>
@@ -58,16 +58,16 @@ export class ActivityDetail extends React.Component<IActivityDetailProps> {
             </dd>
             <dt>
               <span id="points">
-                <Translate contentKey="sinergyApp.activity.points">Points</Translate>
+                <Translate contentKey="synergyApp.activity.points">Points</Translate>
               </span>
             </dt>
             <dd>{activityEntity.points}</dd>
             <dt>
-              <Translate contentKey="sinergyApp.activity.challenge">Challenge</Translate>
+              <Translate contentKey="synergyApp.activity.challenge">Challenge</Translate>
             </dt>
             <dd>{activityEntity.challenge ? activityEntity.challenge.id : ''}</dd>
             <dt>
-              <Translate contentKey="sinergyApp.activity.tag">Tag</Translate>
+              <Translate contentKey="synergyApp.activity.tag">Tag</Translate>
             </dt>
             <dd>
               {activityEntity.tags
@@ -80,7 +80,7 @@ export class ActivityDetail extends React.Component<IActivityDetailProps> {
                 : null}
             </dd>
             <dt>
-              <Translate contentKey="sinergyApp.activity.agenda">Agenda</Translate>
+              <Translate contentKey="synergyApp.activity.agenda">Agenda</Translate>
             </dt>
             <dd>{activityEntity.agenda ? activityEntity.agenda.id : ''}</dd>
           </dl>

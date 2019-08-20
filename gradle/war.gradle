@@ -1,7 +1,7 @@
 apply plugin: "war"
 
 bootWar {
-    mainClassName = "com.endava.sinergy.SinergyApp"
+    mainClassName = "com.endava.synergy.SynergyApp"
     includes = ["WEB-INF/**", "META-INF/**"]
 }
 

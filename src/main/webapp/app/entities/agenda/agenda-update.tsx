@@ -74,8 +74,8 @@ export class AgendaUpdate extends React.Component<IAgendaUpdateProps, IAgendaUpd
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.agenda.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.agenda.home.createOrEditLabel">Create or edit a Agenda</Translate>
+            <h2 id="synergyApp.agenda.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.agenda.home.createOrEditLabel">Create or edit a Agenda</Translate>
             </h2>
           </Col>
         </Row>
@@ -96,24 +96,24 @@ export class AgendaUpdate extends React.Component<IAgendaUpdateProps, IAgendaUpd
                 <AvGroup>
                   <Label id="attendanceLabel" check>
                     <AvInput id="agenda-attendance" type="checkbox" className="form-control" name="attendance" />
-                    <Translate contentKey="sinergyApp.agenda.attendance">Attendance</Translate>
+                    <Translate contentKey="synergyApp.agenda.attendance">Attendance</Translate>
                   </Label>
                 </AvGroup>
                 <AvGroup>
                   <Label id="activityScoringLabel" for="agenda-activityScoring">
-                    <Translate contentKey="sinergyApp.agenda.activityScoring">Activity Scoring</Translate>
+                    <Translate contentKey="synergyApp.agenda.activityScoring">Activity Scoring</Translate>
                   </Label>
                   <AvField id="agenda-activityScoring" type="string" className="form-control" name="activityScoring" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="moderatorScoringLabel" for="agenda-moderatorScoring">
-                    <Translate contentKey="sinergyApp.agenda.moderatorScoring">Moderator Scoring</Translate>
+                    <Translate contentKey="synergyApp.agenda.moderatorScoring">Moderator Scoring</Translate>
                   </Label>
                   <AvField id="agenda-moderatorScoring" type="string" className="form-control" name="moderatorScoring" />
                 </AvGroup>
                 <AvGroup>
                   <Label for="agenda-userProfile">
-                    <Translate contentKey="sinergyApp.agenda.userProfile">User Profile</Translate>
+                    <Translate contentKey="synergyApp.agenda.userProfile">User Profile</Translate>
                   </Label>
                   <AvInput id="agenda-userProfile" type="select" className="form-control" name="userProfile.id">
                     <option value="" key="0" />

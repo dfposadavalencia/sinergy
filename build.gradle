@@ -30,7 +30,7 @@ plugins {
     //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
 }
 
-group = "com.endava.sinergy"
+group = "com.endava.synergy"
 version = "0.0.1-SNAPSHOT"
 
 description = ""
@@ -96,7 +96,7 @@ if (OperatingSystem.current().isWindows()) {
 defaultTasks "bootRun"
 
 springBoot {
-    mainClassName = "com.endava.sinergy.SinergyApp"
+    mainClassName = "com.endava.synergy.SynergyApp"
 }
 
 test {
@@ -166,22 +166,22 @@ liquibase {
     activities {
         main {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://localhost:3306/sinergy"
+            url "jdbc:mysql://localhost:3306/synergy"
             username "root"
-            password ""
+            password "1qaz2wsx"
             changeLogFile "src/main/resources/config/liquibase/master.xml"
-            defaultSchemaName "sinergy"
+            defaultSchemaName "synergy"
             logLevel "debug"
             classpath "src/main/resources/"
         }
         diffLog {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://localhost:3306/sinergy"
+            url "jdbc:mysql://localhost:3306/synergy"
             username "root"
-            password ""
+            password "1qaz2wsx"
             changeLogFile project.ext.diffChangelogFile
-            referenceUrl "hibernate:spring:com.endava.sinergy.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
-            defaultSchemaName "sinergy"
+            referenceUrl "hibernate:spring:com.endava.synergy.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
+            defaultSchemaName "synergy"
             logLevel "debug"
             classpath "$buildDir/classes/java/main"
         }

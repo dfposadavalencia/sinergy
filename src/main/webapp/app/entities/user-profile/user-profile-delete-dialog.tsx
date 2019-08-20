@@ -33,8 +33,8 @@ export class UserProfileDeleteDialog extends React.Component<IUserProfileDeleteD
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.userProfile.delete.question">
-          <Translate contentKey="sinergyApp.userProfile.delete.question" interpolate={{ id: userProfileEntity.id }}>
+        <ModalBody id="synergyApp.userProfile.delete.question">
+          <Translate contentKey="synergyApp.userProfile.delete.question" interpolate={{ id: userProfileEntity.id }}>
             Are you sure you want to delete this UserProfile?
           </Translate>
         </ModalBody>

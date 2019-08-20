@@ -1,7 +1,7 @@
 {
-  "name": "sinergy",
+  "name": "synergy",
   "version": "0.0.0",
-  "description": "Description for sinergy",
+  "description": "Description for synergy",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

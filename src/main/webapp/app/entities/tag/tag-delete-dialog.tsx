@@ -33,8 +33,8 @@ export class TagDeleteDialog extends React.Component<ITagDeleteDialogProps> {
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.tag.delete.question">
-          <Translate contentKey="sinergyApp.tag.delete.question" interpolate={{ id: tagEntity.id }}>
+        <ModalBody id="synergyApp.tag.delete.question">
+          <Translate contentKey="synergyApp.tag.delete.question" interpolate={{ id: tagEntity.id }}>
             Are you sure you want to delete this Tag?
           </Translate>
         </ModalBody>

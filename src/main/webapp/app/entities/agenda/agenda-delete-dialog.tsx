@@ -33,8 +33,8 @@ export class AgendaDeleteDialog extends React.Component<IAgendaDeleteDialogProps
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.agenda.delete.question">
-          <Translate contentKey="sinergyApp.agenda.delete.question" interpolate={{ id: agendaEntity.id }}>
+        <ModalBody id="synergyApp.agenda.delete.question">
+          <Translate contentKey="synergyApp.agenda.delete.question" interpolate={{ id: agendaEntity.id }}>
             Are you sure you want to delete this Agenda?
           </Translate>
         </ModalBody>

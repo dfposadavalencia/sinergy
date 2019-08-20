@@ -33,8 +33,8 @@ export class FieldDeleteDialog extends React.Component<IFieldDeleteDialogProps> 
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.field.delete.question">
-          <Translate contentKey="sinergyApp.field.delete.question" interpolate={{ id: fieldEntity.id }}>
+        <ModalBody id="synergyApp.field.delete.question">
+          <Translate contentKey="synergyApp.field.delete.question" interpolate={{ id: fieldEntity.id }}>
             Are you sure you want to delete this Field?
           </Translate>
         </ModalBody>

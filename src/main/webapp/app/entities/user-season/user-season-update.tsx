@@ -70,8 +70,8 @@ export class UserSeasonUpdate extends React.Component<IUserSeasonUpdateProps, IU
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.userSeason.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.userSeason.home.createOrEditLabel">Create or edit a UserSeason</Translate>
+            <h2 id="synergyApp.userSeason.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.userSeason.home.createOrEditLabel">Create or edit a UserSeason</Translate>
             </h2>
           </Col>
         </Row>
@@ -91,13 +91,13 @@ export class UserSeasonUpdate extends React.Component<IUserSeasonUpdateProps, IU
                 ) : null}
                 <AvGroup>
                   <Label id="rankingLabel" for="user-season-ranking">
-                    <Translate contentKey="sinergyApp.userSeason.ranking">Ranking</Translate>
+                    <Translate contentKey="synergyApp.userSeason.ranking">Ranking</Translate>
                   </Label>
                   <AvField id="user-season-ranking" type="text" name="ranking" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="scoreLabel" for="user-season-score">
-                    <Translate contentKey="sinergyApp.userSeason.score">Score</Translate>
+                    <Translate contentKey="synergyApp.userSeason.score">Score</Translate>
                   </Label>
                   <AvField
                     id="user-season-score"

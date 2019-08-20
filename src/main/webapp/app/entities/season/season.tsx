@@ -68,11 +68,11 @@ export class Season extends React.Component<ISeasonProps, ISeasonState> {
     return (
       <div>
         <h2 id="season-heading">
-          <Translate contentKey="sinergyApp.season.home.title">Seasons</Translate>
+          <Translate contentKey="synergyApp.season.home.title">Seasons</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.season.home.createLabel">Create a new Season</Translate>
+            <Translate contentKey="synergyApp.season.home.createLabel">Create a new Season</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,13 +92,13 @@ export class Season extends React.Component<ISeasonProps, ISeasonState> {
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('name')}>
-                      <Translate contentKey="sinergyApp.season.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.season.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('startDate')}>
-                      <Translate contentKey="sinergyApp.season.startDate">Start Date</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.season.startDate">Start Date</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('endDate')}>
-                      <Translate contentKey="sinergyApp.season.endDate">End Date</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.season.endDate">End Date</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -146,7 +146,7 @@ export class Season extends React.Component<ISeasonProps, ISeasonState> {
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.season.home.notFound">No Seasons found</Translate>
+                <Translate contentKey="synergyApp.season.home.notFound">No Seasons found</Translate>
               </div>
             )}
           </InfiniteScroll>

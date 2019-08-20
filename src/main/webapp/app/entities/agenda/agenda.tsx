@@ -68,11 +68,11 @@ export class Agenda extends React.Component<IAgendaProps, IAgendaState> {
     return (
       <div>
         <h2 id="agenda-heading">
-          <Translate contentKey="sinergyApp.agenda.home.title">Agenda</Translate>
+          <Translate contentKey="synergyApp.agenda.home.title">Agenda</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.agenda.home.createLabel">Create a new Agenda</Translate>
+            <Translate contentKey="synergyApp.agenda.home.createLabel">Create a new Agenda</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,17 +92,17 @@ export class Agenda extends React.Component<IAgendaProps, IAgendaState> {
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('attendance')}>
-                      <Translate contentKey="sinergyApp.agenda.attendance">Attendance</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.agenda.attendance">Attendance</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('activityScoring')}>
-                      <Translate contentKey="sinergyApp.agenda.activityScoring">Activity Scoring</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.agenda.activityScoring">Activity Scoring</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('moderatorScoring')}>
-                      <Translate contentKey="sinergyApp.agenda.moderatorScoring">Moderator Scoring</Translate>{' '}
+                      <Translate contentKey="synergyApp.agenda.moderatorScoring">Moderator Scoring</Translate>{' '}
                       <FontAwesomeIcon icon="sort" />
                     </th>
                     <th>
-                      <Translate contentKey="sinergyApp.agenda.userProfile">User Profile</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.agenda.userProfile">User Profile</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -147,7 +147,7 @@ export class Agenda extends React.Component<IAgendaProps, IAgendaState> {
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.agenda.home.notFound">No Agenda found</Translate>
+                <Translate contentKey="synergyApp.agenda.home.notFound">No Agenda found</Translate>
               </div>
             )}
           </InfiniteScroll>

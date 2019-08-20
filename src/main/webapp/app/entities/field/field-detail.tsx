@@ -25,18 +25,18 @@ export class FieldDetail extends React.Component<IFieldDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.field.detail.title">Field</Translate> [<b>{fieldEntity.id}</b>]
+            <Translate contentKey="synergyApp.field.detail.title">Field</Translate> [<b>{fieldEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="sinergyApp.field.name">Name</Translate>
+                <Translate contentKey="synergyApp.field.name">Name</Translate>
               </span>
             </dt>
             <dd>{fieldEntity.name}</dd>
             <dt>
               <span id="value">
-                <Translate contentKey="sinergyApp.field.value">Value</Translate>
+                <Translate contentKey="synergyApp.field.value">Value</Translate>
               </span>
             </dt>
             <dd>{fieldEntity.value}</dd>

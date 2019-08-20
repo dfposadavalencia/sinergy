@@ -68,11 +68,11 @@ export class Tag extends React.Component<ITagProps, ITagState> {
     return (
       <div>
         <h2 id="tag-heading">
-          <Translate contentKey="sinergyApp.tag.home.title">Tags</Translate>
+          <Translate contentKey="synergyApp.tag.home.title">Tags</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.tag.home.createLabel">Create a new Tag</Translate>
+            <Translate contentKey="synergyApp.tag.home.createLabel">Create a new Tag</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,7 +92,7 @@ export class Tag extends React.Component<ITagProps, ITagState> {
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('label')}>
-                      <Translate contentKey="sinergyApp.tag.label">Label</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.tag.label">Label</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -134,7 +134,7 @@ export class Tag extends React.Component<ITagProps, ITagState> {
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.tag.home.notFound">No Tags found</Translate>
+                <Translate contentKey="synergyApp.tag.home.notFound">No Tags found</Translate>
               </div>
             )}
           </InfiniteScroll>
