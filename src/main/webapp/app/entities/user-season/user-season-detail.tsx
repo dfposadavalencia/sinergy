@@ -25,18 +25,18 @@ export class UserSeasonDetail extends React.Component<IUserSeasonDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.userSeason.detail.title">UserSeason</Translate> [<b>{userSeasonEntity.id}</b>]
+            <Translate contentKey="synergyApp.userSeason.detail.title">UserSeason</Translate> [<b>{userSeasonEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="ranking">
-                <Translate contentKey="sinergyApp.userSeason.ranking">Ranking</Translate>
+                <Translate contentKey="synergyApp.userSeason.ranking">Ranking</Translate>
               </span>
             </dt>
             <dd>{userSeasonEntity.ranking}</dd>
             <dt>
               <span id="score">
-                <Translate contentKey="sinergyApp.userSeason.score">Score</Translate>
+                <Translate contentKey="synergyApp.userSeason.score">Score</Translate>
               </span>
             </dt>
             <dd>{userSeasonEntity.score}</dd>

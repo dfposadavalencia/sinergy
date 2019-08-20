@@ -25,23 +25,23 @@ export class UserProfileDetail extends React.Component<IUserProfileDetailProps> 
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.userProfile.detail.title">UserProfile</Translate> [<b>{userProfileEntity.id}</b>]
+            <Translate contentKey="synergyApp.userProfile.detail.title">UserProfile</Translate> [<b>{userProfileEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="grade">
-                <Translate contentKey="sinergyApp.userProfile.grade">Grade</Translate>
+                <Translate contentKey="synergyApp.userProfile.grade">Grade</Translate>
               </span>
             </dt>
             <dd>{userProfileEntity.grade}</dd>
             <dt>
               <span id="voice">
-                <Translate contentKey="sinergyApp.userProfile.voice">Voice</Translate>
+                <Translate contentKey="synergyApp.userProfile.voice">Voice</Translate>
               </span>
             </dt>
             <dd>{userProfileEntity.voice}</dd>
             <dt>
-              <Translate contentKey="sinergyApp.userProfile.season">Season</Translate>
+              <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
             </dt>
             <dd>
               {userProfileEntity.seasons

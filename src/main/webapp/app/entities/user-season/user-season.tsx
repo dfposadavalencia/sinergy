@@ -24,11 +24,11 @@ export class UserSeason extends React.Component<IUserSeasonProps> {
     return (
       <div>
         <h2 id="user-season-heading">
-          <Translate contentKey="sinergyApp.userSeason.home.title">User Seasons</Translate>
+          <Translate contentKey="synergyApp.userSeason.home.title">User Seasons</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.userSeason.home.createLabel">Create a new User Season</Translate>
+            <Translate contentKey="synergyApp.userSeason.home.createLabel">Create a new User Season</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -40,10 +40,10 @@ export class UserSeason extends React.Component<IUserSeasonProps> {
                     <Translate contentKey="global.field.id">ID</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="sinergyApp.userSeason.ranking">Ranking</Translate>
+                    <Translate contentKey="synergyApp.userSeason.ranking">Ranking</Translate>
                   </th>
                   <th>
-                    <Translate contentKey="sinergyApp.userSeason.score">Score</Translate>
+                    <Translate contentKey="synergyApp.userSeason.score">Score</Translate>
                   </th>
                   <th />
                 </tr>
@@ -86,7 +86,7 @@ export class UserSeason extends React.Component<IUserSeasonProps> {
             </Table>
           ) : (
             <div className="alert alert-warning">
-              <Translate contentKey="sinergyApp.userSeason.home.notFound">No User Seasons found</Translate>
+              <Translate contentKey="synergyApp.userSeason.home.notFound">No User Seasons found</Translate>
             </div>
           )}
         </div>

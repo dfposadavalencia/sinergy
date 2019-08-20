@@ -25,18 +25,18 @@ export class ChallengeDetail extends React.Component<IChallengeDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.challenge.detail.title">Challenge</Translate> [<b>{challengeEntity.id}</b>]
+            <Translate contentKey="synergyApp.challenge.detail.title">Challenge</Translate> [<b>{challengeEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="sinergyApp.challenge.name">Name</Translate>
+                <Translate contentKey="synergyApp.challenge.name">Name</Translate>
               </span>
             </dt>
             <dd>{challengeEntity.name}</dd>
             <dt>
               <span id="purpose">
-                <Translate contentKey="sinergyApp.challenge.purpose">Purpose</Translate>
+                <Translate contentKey="synergyApp.challenge.purpose">Purpose</Translate>
               </span>
             </dt>
             <dd>{challengeEntity.purpose}</dd>

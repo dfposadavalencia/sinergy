@@ -33,8 +33,8 @@ export class ActivityDeleteDialog extends React.Component<IActivityDeleteDialogP
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.activity.delete.question">
-          <Translate contentKey="sinergyApp.activity.delete.question" interpolate={{ id: activityEntity.id }}>
+        <ModalBody id="synergyApp.activity.delete.question">
+          <Translate contentKey="synergyApp.activity.delete.question" interpolate={{ id: activityEntity.id }}>
             Are you sure you want to delete this Activity?
           </Translate>
         </ModalBody>

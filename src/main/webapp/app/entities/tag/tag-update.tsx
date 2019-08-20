@@ -80,8 +80,8 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.tag.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.tag.home.createOrEditLabel">Create or edit a Tag</Translate>
+            <h2 id="synergyApp.tag.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.tag.home.createOrEditLabel">Create or edit a Tag</Translate>
             </h2>
           </Col>
         </Row>
@@ -101,7 +101,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
                 ) : null}
                 <AvGroup>
                   <Label id="labelLabel" for="tag-label">
-                    <Translate contentKey="sinergyApp.tag.label">Label</Translate>
+                    <Translate contentKey="synergyApp.tag.label">Label</Translate>
                   </Label>
                   <AvField
                     id="tag-label"
@@ -114,7 +114,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
                 </AvGroup>
                 <AvGroup>
                   <Label for="tag-field">
-                    <Translate contentKey="sinergyApp.tag.field">Field</Translate>
+                    <Translate contentKey="synergyApp.tag.field">Field</Translate>
                   </Label>
                   <AvInput
                     id="tag-field"

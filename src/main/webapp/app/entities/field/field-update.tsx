@@ -74,8 +74,8 @@ export class FieldUpdate extends React.Component<IFieldUpdateProps, IFieldUpdate
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.field.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.field.home.createOrEditLabel">Create or edit a Field</Translate>
+            <h2 id="synergyApp.field.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.field.home.createOrEditLabel">Create or edit a Field</Translate>
             </h2>
           </Col>
         </Row>
@@ -95,13 +95,13 @@ export class FieldUpdate extends React.Component<IFieldUpdateProps, IFieldUpdate
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="field-name">
-                    <Translate contentKey="sinergyApp.field.name">Name</Translate>
+                    <Translate contentKey="synergyApp.field.name">Name</Translate>
                   </Label>
                   <AvField id="field-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="valueLabel" for="field-value">
-                    <Translate contentKey="sinergyApp.field.value">Value</Translate>
+                    <Translate contentKey="synergyApp.field.value">Value</Translate>
                   </Label>
                   <AvField id="field-value" type="text" name="value" />
                 </AvGroup>

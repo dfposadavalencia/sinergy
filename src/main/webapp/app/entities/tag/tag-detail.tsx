@@ -25,17 +25,17 @@ export class TagDetail extends React.Component<ITagDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.tag.detail.title">Tag</Translate> [<b>{tagEntity.id}</b>]
+            <Translate contentKey="synergyApp.tag.detail.title">Tag</Translate> [<b>{tagEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="label">
-                <Translate contentKey="sinergyApp.tag.label">Label</Translate>
+                <Translate contentKey="synergyApp.tag.label">Label</Translate>
               </span>
             </dt>
             <dd>{tagEntity.label}</dd>
             <dt>
-              <Translate contentKey="sinergyApp.tag.field">Field</Translate>
+              <Translate contentKey="synergyApp.tag.field">Field</Translate>
             </dt>
             <dd>
               {tagEntity.fields

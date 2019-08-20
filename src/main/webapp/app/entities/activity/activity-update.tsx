@@ -88,8 +88,8 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.activity.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.activity.home.createOrEditLabel">Create or edit a Activity</Translate>
+            <h2 id="synergyApp.activity.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.activity.home.createOrEditLabel">Create or edit a Activity</Translate>
             </h2>
           </Col>
         </Row>
@@ -109,19 +109,19 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="activity-name">
-                    <Translate contentKey="sinergyApp.activity.name">Name</Translate>
+                    <Translate contentKey="synergyApp.activity.name">Name</Translate>
                   </Label>
                   <AvField id="activity-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="placeLabel" for="activity-place">
-                    <Translate contentKey="sinergyApp.activity.place">Place</Translate>
+                    <Translate contentKey="synergyApp.activity.place">Place</Translate>
                   </Label>
                   <AvField id="activity-place" type="text" name="place" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="startDateLabel" for="activity-startDate">
-                    <Translate contentKey="sinergyApp.activity.startDate">Start Date</Translate>
+                    <Translate contentKey="synergyApp.activity.startDate">Start Date</Translate>
                   </Label>
                   <AvInput
                     id="activity-startDate"
@@ -134,7 +134,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                 </AvGroup>
                 <AvGroup>
                   <Label id="endDateLabel" for="activity-endDate">
-                    <Translate contentKey="sinergyApp.activity.endDate">End Date</Translate>
+                    <Translate contentKey="synergyApp.activity.endDate">End Date</Translate>
                   </Label>
                   <AvInput
                     id="activity-endDate"
@@ -147,13 +147,13 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                 </AvGroup>
                 <AvGroup>
                   <Label id="pointsLabel" for="activity-points">
-                    <Translate contentKey="sinergyApp.activity.points">Points</Translate>
+                    <Translate contentKey="synergyApp.activity.points">Points</Translate>
                   </Label>
                   <AvField id="activity-points" type="string" className="form-control" name="points" />
                 </AvGroup>
                 <AvGroup>
                   <Label for="activity-challenge">
-                    <Translate contentKey="sinergyApp.activity.challenge">Challenge</Translate>
+                    <Translate contentKey="synergyApp.activity.challenge">Challenge</Translate>
                   </Label>
                   <AvInput id="activity-challenge" type="select" className="form-control" name="challenge.id">
                     <option value="" key="0" />
@@ -168,7 +168,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                 </AvGroup>
                 <AvGroup>
                   <Label for="activity-tag">
-                    <Translate contentKey="sinergyApp.activity.tag">Tag</Translate>
+                    <Translate contentKey="synergyApp.activity.tag">Tag</Translate>
                   </Label>
                   <AvInput
                     id="activity-tag"
@@ -190,7 +190,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                 </AvGroup>
                 <AvGroup>
                   <Label for="activity-agenda">
-                    <Translate contentKey="sinergyApp.activity.agenda">Agenda</Translate>
+                    <Translate contentKey="synergyApp.activity.agenda">Agenda</Translate>
                   </Label>
                   <AvInput id="activity-agenda" type="select" className="form-control" name="agenda.id">
                     <option value="" key="0" />

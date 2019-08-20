@@ -68,11 +68,11 @@ export class Field extends React.Component<IFieldProps, IFieldState> {
     return (
       <div>
         <h2 id="field-heading">
-          <Translate contentKey="sinergyApp.field.home.title">Fields</Translate>
+          <Translate contentKey="synergyApp.field.home.title">Fields</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.field.home.createLabel">Create a new Field</Translate>
+            <Translate contentKey="synergyApp.field.home.createLabel">Create a new Field</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,10 +92,10 @@ export class Field extends React.Component<IFieldProps, IFieldState> {
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('name')}>
-                      <Translate contentKey="sinergyApp.field.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.field.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('value')}>
-                      <Translate contentKey="sinergyApp.field.value">Value</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.field.value">Value</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -138,7 +138,7 @@ export class Field extends React.Component<IFieldProps, IFieldState> {
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.field.home.notFound">No Fields found</Translate>
+                <Translate contentKey="synergyApp.field.home.notFound">No Fields found</Translate>
               </div>
             )}
           </InfiniteScroll>

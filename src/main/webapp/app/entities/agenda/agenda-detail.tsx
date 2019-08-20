@@ -25,29 +25,29 @@ export class AgendaDetail extends React.Component<IAgendaDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.agenda.detail.title">Agenda</Translate> [<b>{agendaEntity.id}</b>]
+            <Translate contentKey="synergyApp.agenda.detail.title">Agenda</Translate> [<b>{agendaEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="attendance">
-                <Translate contentKey="sinergyApp.agenda.attendance">Attendance</Translate>
+                <Translate contentKey="synergyApp.agenda.attendance">Attendance</Translate>
               </span>
             </dt>
             <dd>{agendaEntity.attendance ? 'true' : 'false'}</dd>
             <dt>
               <span id="activityScoring">
-                <Translate contentKey="sinergyApp.agenda.activityScoring">Activity Scoring</Translate>
+                <Translate contentKey="synergyApp.agenda.activityScoring">Activity Scoring</Translate>
               </span>
             </dt>
             <dd>{agendaEntity.activityScoring}</dd>
             <dt>
               <span id="moderatorScoring">
-                <Translate contentKey="sinergyApp.agenda.moderatorScoring">Moderator Scoring</Translate>
+                <Translate contentKey="synergyApp.agenda.moderatorScoring">Moderator Scoring</Translate>
               </span>
             </dt>
             <dd>{agendaEntity.moderatorScoring}</dd>
             <dt>
-              <Translate contentKey="sinergyApp.agenda.userProfile">User Profile</Translate>
+              <Translate contentKey="synergyApp.agenda.userProfile">User Profile</Translate>
             </dt>
             <dd>{agendaEntity.userProfile ? agendaEntity.userProfile.id : ''}</dd>
           </dl>

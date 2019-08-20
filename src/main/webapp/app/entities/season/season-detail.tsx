@@ -25,18 +25,18 @@ export class SeasonDetail extends React.Component<ISeasonDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sinergyApp.season.detail.title">Season</Translate> [<b>{seasonEntity.id}</b>]
+            <Translate contentKey="synergyApp.season.detail.title">Season</Translate> [<b>{seasonEntity.id}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">
-                <Translate contentKey="sinergyApp.season.name">Name</Translate>
+                <Translate contentKey="synergyApp.season.name">Name</Translate>
               </span>
             </dt>
             <dd>{seasonEntity.name}</dd>
             <dt>
               <span id="startDate">
-                <Translate contentKey="sinergyApp.season.startDate">Start Date</Translate>
+                <Translate contentKey="synergyApp.season.startDate">Start Date</Translate>
               </span>
             </dt>
             <dd>
@@ -44,7 +44,7 @@ export class SeasonDetail extends React.Component<ISeasonDetailProps> {
             </dd>
             <dt>
               <span id="endDate">
-                <Translate contentKey="sinergyApp.season.endDate">End Date</Translate>
+                <Translate contentKey="synergyApp.season.endDate">End Date</Translate>
               </span>
             </dt>
             <dd>

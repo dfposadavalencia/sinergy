@@ -75,8 +75,8 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.userProfile.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.userProfile.home.createOrEditLabel">Create or edit a UserProfile</Translate>
+            <h2 id="synergyApp.userProfile.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.userProfile.home.createOrEditLabel">Create or edit a UserProfile</Translate>
             </h2>
           </Col>
         </Row>
@@ -96,19 +96,19 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                 ) : null}
                 <AvGroup>
                   <Label id="gradeLabel" for="user-profile-grade">
-                    <Translate contentKey="sinergyApp.userProfile.grade">Grade</Translate>
+                    <Translate contentKey="synergyApp.userProfile.grade">Grade</Translate>
                   </Label>
                   <AvField id="user-profile-grade" type="text" name="grade" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="voiceLabel" for="user-profile-voice">
-                    <Translate contentKey="sinergyApp.userProfile.voice">Voice</Translate>
+                    <Translate contentKey="synergyApp.userProfile.voice">Voice</Translate>
                   </Label>
                   <AvField id="user-profile-voice" type="text" name="voice" />
                 </AvGroup>
                 <AvGroup>
                   <Label for="user-profile-season">
-                    <Translate contentKey="sinergyApp.userProfile.season">Season</Translate>
+                    <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
                   </Label>
                   <AvInput
                     id="user-profile-season"

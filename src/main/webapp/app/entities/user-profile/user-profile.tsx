@@ -68,11 +68,11 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
     return (
       <div>
         <h2 id="user-profile-heading">
-          <Translate contentKey="sinergyApp.userProfile.home.title">User Profiles</Translate>
+          <Translate contentKey="synergyApp.userProfile.home.title">User Profiles</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.userProfile.home.createLabel">Create a new User Profile</Translate>
+            <Translate contentKey="synergyApp.userProfile.home.createLabel">Create a new User Profile</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,10 +92,10 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('grade')}>
-                      <Translate contentKey="sinergyApp.userProfile.grade">Grade</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.userProfile.grade">Grade</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('voice')}>
-                      <Translate contentKey="sinergyApp.userProfile.voice">Voice</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.userProfile.voice">Voice</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -138,7 +138,7 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.userProfile.home.notFound">No User Profiles found</Translate>
+                <Translate contentKey="synergyApp.userProfile.home.notFound">No User Profiles found</Translate>
               </div>
             )}
           </InfiniteScroll>

@@ -68,11 +68,11 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
     return (
       <div>
         <h2 id="activity-heading">
-          <Translate contentKey="sinergyApp.activity.home.title">Activities</Translate>
+          <Translate contentKey="synergyApp.activity.home.title">Activities</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.activity.home.createLabel">Create a new Activity</Translate>
+            <Translate contentKey="synergyApp.activity.home.createLabel">Create a new Activity</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,25 +92,25 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('name')}>
-                      <Translate contentKey="sinergyApp.activity.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('place')}>
-                      <Translate contentKey="sinergyApp.activity.place">Place</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.place">Place</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('startDate')}>
-                      <Translate contentKey="sinergyApp.activity.startDate">Start Date</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.startDate">Start Date</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('endDate')}>
-                      <Translate contentKey="sinergyApp.activity.endDate">End Date</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.endDate">End Date</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('points')}>
-                      <Translate contentKey="sinergyApp.activity.points">Points</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.points">Points</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th>
-                      <Translate contentKey="sinergyApp.activity.challenge">Challenge</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.challenge">Challenge</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th>
-                      <Translate contentKey="sinergyApp.activity.agenda">Agenda</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.activity.agenda">Agenda</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -162,7 +162,7 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.activity.home.notFound">No Activities found</Translate>
+                <Translate contentKey="synergyApp.activity.home.notFound">No Activities found</Translate>
               </div>
             )}
           </InfiniteScroll>

@@ -68,11 +68,11 @@ export class Challenge extends React.Component<IChallengeProps, IChallengeState>
     return (
       <div>
         <h2 id="challenge-heading">
-          <Translate contentKey="sinergyApp.challenge.home.title">Challenges</Translate>
+          <Translate contentKey="synergyApp.challenge.home.title">Challenges</Translate>
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="sinergyApp.challenge.home.createLabel">Create a new Challenge</Translate>
+            <Translate contentKey="synergyApp.challenge.home.createLabel">Create a new Challenge</Translate>
           </Link>
         </h2>
         <div className="table-responsive">
@@ -92,10 +92,10 @@ export class Challenge extends React.Component<IChallengeProps, IChallengeState>
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('name')}>
-                      <Translate contentKey="sinergyApp.challenge.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.challenge.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('purpose')}>
-                      <Translate contentKey="sinergyApp.challenge.purpose">Purpose</Translate> <FontAwesomeIcon icon="sort" />
+                      <Translate contentKey="synergyApp.challenge.purpose">Purpose</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -138,7 +138,7 @@ export class Challenge extends React.Component<IChallengeProps, IChallengeState>
               </Table>
             ) : (
               <div className="alert alert-warning">
-                <Translate contentKey="sinergyApp.challenge.home.notFound">No Challenges found</Translate>
+                <Translate contentKey="synergyApp.challenge.home.notFound">No Challenges found</Translate>
               </div>
             )}
           </InfiniteScroll>

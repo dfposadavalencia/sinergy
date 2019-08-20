@@ -33,8 +33,8 @@ export class UserSeasonDeleteDialog extends React.Component<IUserSeasonDeleteDia
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.userSeason.delete.question">
-          <Translate contentKey="sinergyApp.userSeason.delete.question" interpolate={{ id: userSeasonEntity.id }}>
+        <ModalBody id="synergyApp.userSeason.delete.question">
+          <Translate contentKey="synergyApp.userSeason.delete.question" interpolate={{ id: userSeasonEntity.id }}>
             Are you sure you want to delete this UserSeason?
           </Translate>
         </ModalBody>

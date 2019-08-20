@@ -68,8 +68,8 @@ export class ChallengeUpdate extends React.Component<IChallengeUpdateProps, ICha
       <div>
         <Row className="justify-content-center">
           <Col md="8">
-            <h2 id="sinergyApp.challenge.home.createOrEditLabel">
-              <Translate contentKey="sinergyApp.challenge.home.createOrEditLabel">Create or edit a Challenge</Translate>
+            <h2 id="synergyApp.challenge.home.createOrEditLabel">
+              <Translate contentKey="synergyApp.challenge.home.createOrEditLabel">Create or edit a Challenge</Translate>
             </h2>
           </Col>
         </Row>
@@ -89,13 +89,13 @@ export class ChallengeUpdate extends React.Component<IChallengeUpdateProps, ICha
                 ) : null}
                 <AvGroup>
                   <Label id="nameLabel" for="challenge-name">
-                    <Translate contentKey="sinergyApp.challenge.name">Name</Translate>
+                    <Translate contentKey="synergyApp.challenge.name">Name</Translate>
                   </Label>
                   <AvField id="challenge-name" type="text" name="name" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="purposeLabel" for="challenge-purpose">
-                    <Translate contentKey="sinergyApp.challenge.purpose">Purpose</Translate>
+                    <Translate contentKey="synergyApp.challenge.purpose">Purpose</Translate>
                   </Label>
                   <AvField id="challenge-purpose" type="text" name="purpose" />
                 </AvGroup>

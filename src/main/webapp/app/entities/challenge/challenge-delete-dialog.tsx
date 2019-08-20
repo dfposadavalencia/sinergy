@@ -33,8 +33,8 @@ export class ChallengeDeleteDialog extends React.Component<IChallengeDeleteDialo
         <ModalHeader toggle={this.handleClose}>
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
-        <ModalBody id="sinergyApp.challenge.delete.question">
-          <Translate contentKey="sinergyApp.challenge.delete.question" interpolate={{ id: challengeEntity.id }}>
+        <ModalBody id="synergyApp.challenge.delete.question">
+          <Translate contentKey="synergyApp.challenge.delete.question" interpolate={{ id: challengeEntity.id }}>
             Are you sure you want to delete this Challenge?
           </Translate>
         </ModalBody>
