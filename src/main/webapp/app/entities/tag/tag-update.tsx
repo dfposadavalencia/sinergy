@@ -12,6 +12,8 @@ import { IField } from 'app/shared/model/field.model';
 import { getEntities as getFields } from 'app/entities/field/field.reducer';
 import { IActivity } from 'app/shared/model/activity.model';
 import { getEntities as getActivities } from 'app/entities/activity/activity.reducer';
+import { IUserProfile } from 'app/shared/model/user-profile.model';
+import { getEntities as getUserProfiles } from 'app/entities/user-profile/user-profile.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './tag.reducer';
 import { ITag } from 'app/shared/model/tag.model';
 // tslint:disable-next-line:no-unused-variable
@@ -24,6 +26,7 @@ export interface ITagUpdateState {
   isNew: boolean;
   idsfield: any[];
   activityId: string;
+  userProfileId: string;
 }
 
 export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState> {
@@ -32,6 +35,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
     this.state = {
       idsfield: [],
       activityId: '0',
+      userProfileId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -49,6 +53,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
 
     this.props.getFields();
     this.props.getActivities();
+    this.props.getUserProfiles();
   }
 
   saveEntity = (event, errors, values) => {
@@ -73,7 +78,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
   };
 
   render() {
-    const { tagEntity, fields, activities, loading, updating } = this.props;
+    const { tagEntity, fields, activities, userProfiles, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -159,6 +164,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
 const mapStateToProps = (storeState: IRootState) => ({
   fields: storeState.field.entities,
   activities: storeState.activity.entities,
+  userProfiles: storeState.userProfile.entities,
   tagEntity: storeState.tag.entity,
   loading: storeState.tag.loading,
   updating: storeState.tag.updating,
@@ -168,6 +174,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 const mapDispatchToProps = {
   getFields,
   getActivities,
+  getUserProfiles,
   getEntity,
   updateEntity,
   createEntity,

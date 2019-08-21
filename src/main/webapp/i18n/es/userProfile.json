@@ -18,8 +18,10 @@
       },
       "grade": "Grade",
       "voice": "Voice",
+      "discipline": "Discipline",
       "agenda": "Agenda",
-      "season": "Season"
+      "season": "Season",
+      "tag": "Tag"
     }
   }
 }

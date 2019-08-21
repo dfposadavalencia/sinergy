@@ -16,14 +16,14 @@ import java.util.Optional;
 @Repository
 public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
 
-    @Query(value = "select distinct userProfile from UserProfile userProfile left join fetch userProfile.seasons",
+    @Query(value = "select distinct userProfile from UserProfile userProfile left join fetch userProfile.seasons left join fetch userProfile.tags",
         countQuery = "select count(distinct userProfile) from UserProfile userProfile")
     Page<UserProfile> findAllWithEagerRelationships(Pageable pageable);
 
-    @Query("select distinct userProfile from UserProfile userProfile left join fetch userProfile.seasons")
+    @Query("select distinct userProfile from UserProfile userProfile left join fetch userProfile.seasons left join fetch userProfile.tags")
     List<UserProfile> findAllWithEagerRelationships();
 
-    @Query("select userProfile from UserProfile userProfile left join fetch userProfile.seasons where userProfile.id =:id")
+    @Query("select userProfile from UserProfile userProfile left join fetch userProfile.seasons left join fetch userProfile.tags where userProfile.id =:id")
     Optional<UserProfile> findOneWithEagerRelationships(@Param("id") Long id);
 
 }

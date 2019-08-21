@@ -25,6 +25,9 @@ public class UserProfile implements Serializable {
     @Column(name = "voice")
     private String voice;
 
+    @Column(name = "discipline")
+    private String discipline;
+
     @OneToMany(mappedBy = "userProfile")
     private Set<Agenda> agenda = new HashSet<>();
 
@@ -33,6 +36,12 @@ public class UserProfile implements Serializable {
                joinColumns = @JoinColumn(name = "user_profile_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "season_id", referencedColumnName = "id"))
     private Set<Season> seasons = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(name = "user_profile_tag",
+               joinColumns = @JoinColumn(name = "user_profile_id", referencedColumnName = "id"),
+               inverseJoinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
+    private Set<Tag> tags = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -67,6 +76,19 @@ public class UserProfile implements Serializable {
 
     public void setVoice(String voice) {
         this.voice = voice;
+    }
+
+    public String getDiscipline() {
+        return discipline;
+    }
+
+    public UserProfile discipline(String discipline) {
+        this.discipline = discipline;
+        return this;
+    }
+
+    public void setDiscipline(String discipline) {
+        this.discipline = discipline;
     }
 
     public Set<Agenda> getAgenda() {
@@ -118,6 +140,31 @@ public class UserProfile implements Serializable {
     public void setSeasons(Set<Season> seasons) {
         this.seasons = seasons;
     }
+
+    public Set<Tag> getTags() {
+        return tags;
+    }
+
+    public UserProfile tags(Set<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public UserProfile addTag(Tag tag) {
+        this.tags.add(tag);
+        tag.getUserProfiles().add(this);
+        return this;
+    }
+
+    public UserProfile removeTag(Tag tag) {
+        this.tags.remove(tag);
+        tag.getUserProfiles().remove(this);
+        return this;
+    }
+
+    public void setTags(Set<Tag> tags) {
+        this.tags = tags;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -142,6 +189,7 @@ public class UserProfile implements Serializable {
             "id=" + getId() +
             ", grade='" + getGrade() + "'" +
             ", voice='" + getVoice() + "'" +
+            ", discipline='" + getDiscipline() + "'" +
             "}";
     }
 }

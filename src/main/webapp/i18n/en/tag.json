@@ -18,7 +18,8 @@
       },
       "label": "Label",
       "field": "Field",
-      "activity": "Activity"
+      "activity": "Activity",
+      "userProfile": "User Profile"
     }
   }
 }

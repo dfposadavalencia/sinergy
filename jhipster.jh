@@ -1,6 +1,9 @@
+
+
 entity UserProfile {
     grade String
     voice String
+    discipline String
 }
 
 entity UserSeason {
@@ -53,7 +56,8 @@ relationship OneToMany {
 relationship ManyToMany {
     UserProfile{season} to Season{userProfile},
     Tag{field} to Field{tag},
-    Activity{tag} to Tag{activity}
+    Activity{tag} to Tag{activity},
+    UserProfile{tag} to Tag{userProfile}
 }
 
 // Set pagination options

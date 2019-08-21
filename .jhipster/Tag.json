@@ -25,6 +25,14 @@
             "relationshipName": "activity",
             "otherEntityField": "id",
             "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "userProfile",
+            "otherEntityRelationshipName": "tag",
+            "relationshipName": "userProfile",
+            "otherEntityField": "id",
+            "ownerSide": false
         }
     ],
     "changelogDate": "20190816170245",

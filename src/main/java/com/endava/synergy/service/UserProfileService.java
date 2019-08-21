@@ -34,7 +34,7 @@ public interface UserProfileService {
      * @return the list of entities.
      */
     Page<UserProfile> findAllWithEagerRelationships(Pageable pageable);
-
+    
     /**
      * Get the "id" userProfile.
      *

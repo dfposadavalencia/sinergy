@@ -45,6 +45,9 @@ public class UserProfileResourceIT {
     private static final String DEFAULT_VOICE = "AAAAAAAAAA";
     private static final String UPDATED_VOICE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DISCIPLINE = "AAAAAAAAAA";
+    private static final String UPDATED_DISCIPLINE = "BBBBBBBBBB";
+
     @Autowired
     private UserProfileRepository userProfileRepository;
 
@@ -97,7 +100,8 @@ public class UserProfileResourceIT {
     public static UserProfile createEntity(EntityManager em) {
         UserProfile userProfile = new UserProfile()
             .grade(DEFAULT_GRADE)
-            .voice(DEFAULT_VOICE);
+            .voice(DEFAULT_VOICE)
+            .discipline(DEFAULT_DISCIPLINE);
         return userProfile;
     }
     /**
@@ -109,7 +113,8 @@ public class UserProfileResourceIT {
     public static UserProfile createUpdatedEntity(EntityManager em) {
         UserProfile userProfile = new UserProfile()
             .grade(UPDATED_GRADE)
-            .voice(UPDATED_VOICE);
+            .voice(UPDATED_VOICE)
+            .discipline(UPDATED_DISCIPLINE);
         return userProfile;
     }
 
@@ -135,6 +140,7 @@ public class UserProfileResourceIT {
         UserProfile testUserProfile = userProfileList.get(userProfileList.size() - 1);
         assertThat(testUserProfile.getGrade()).isEqualTo(DEFAULT_GRADE);
         assertThat(testUserProfile.getVoice()).isEqualTo(DEFAULT_VOICE);
+        assertThat(testUserProfile.getDiscipline()).isEqualTo(DEFAULT_DISCIPLINE);
     }
 
     @Test
@@ -169,9 +175,10 @@ public class UserProfileResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(userProfile.getId().intValue())))
             .andExpect(jsonPath("$.[*].grade").value(hasItem(DEFAULT_GRADE.toString())))
-            .andExpect(jsonPath("$.[*].voice").value(hasItem(DEFAULT_VOICE.toString())));
+            .andExpect(jsonPath("$.[*].voice").value(hasItem(DEFAULT_VOICE.toString())))
+            .andExpect(jsonPath("$.[*].discipline").value(hasItem(DEFAULT_DISCIPLINE.toString())));
     }
-
+    
     @SuppressWarnings({"unchecked"})
     public void getAllUserProfilesWithEagerRelationshipsIsEnabled() throws Exception {
         UserProfileResource userProfileResource = new UserProfileResource(userProfileServiceMock);
@@ -217,7 +224,8 @@ public class UserProfileResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(userProfile.getId().intValue()))
             .andExpect(jsonPath("$.grade").value(DEFAULT_GRADE.toString()))
-            .andExpect(jsonPath("$.voice").value(DEFAULT_VOICE.toString()));
+            .andExpect(jsonPath("$.voice").value(DEFAULT_VOICE.toString()))
+            .andExpect(jsonPath("$.discipline").value(DEFAULT_DISCIPLINE.toString()));
     }
 
     @Test
@@ -242,7 +250,8 @@ public class UserProfileResourceIT {
         em.detach(updatedUserProfile);
         updatedUserProfile
             .grade(UPDATED_GRADE)
-            .voice(UPDATED_VOICE);
+            .voice(UPDATED_VOICE)
+            .discipline(UPDATED_DISCIPLINE);
 
         restUserProfileMockMvc.perform(put("/api/user-profiles")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -255,6 +264,7 @@ public class UserProfileResourceIT {
         UserProfile testUserProfile = userProfileList.get(userProfileList.size() - 1);
         assertThat(testUserProfile.getGrade()).isEqualTo(UPDATED_GRADE);
         assertThat(testUserProfile.getVoice()).isEqualTo(UPDATED_VOICE);
+        assertThat(testUserProfile.getDiscipline()).isEqualTo(UPDATED_DISCIPLINE);
     }
 
     @Test

@@ -10,6 +10,8 @@ import { IRootState } from 'app/shared/reducers';
 
 import { ISeason } from 'app/shared/model/season.model';
 import { getEntities as getSeasons } from 'app/entities/season/season.reducer';
+import { ITag } from 'app/shared/model/tag.model';
+import { getEntities as getTags } from 'app/entities/tag/tag.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './user-profile.reducer';
 import { IUserProfile } from 'app/shared/model/user-profile.model';
 // tslint:disable-next-line:no-unused-variable
@@ -21,6 +23,7 @@ export interface IUserProfileUpdateProps extends StateProps, DispatchProps, Rout
 export interface IUserProfileUpdateState {
   isNew: boolean;
   idsseason: any[];
+  idstag: any[];
 }
 
 export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, IUserProfileUpdateState> {
@@ -28,6 +31,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
     super(props);
     this.state = {
       idsseason: [],
+      idstag: [],
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -44,6 +48,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
     }
 
     this.props.getSeasons();
+    this.props.getTags();
   }
 
   saveEntity = (event, errors, values) => {
@@ -52,7 +57,8 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
       const entity = {
         ...userProfileEntity,
         ...values,
-        seasons: mapIdList(values.seasons)
+        seasons: mapIdList(values.seasons),
+        tags: mapIdList(values.tags)
       };
 
       if (this.state.isNew) {
@@ -68,7 +74,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
   };
 
   render() {
-    const { userProfileEntity, seasons, loading, updating } = this.props;
+    const { userProfileEntity, seasons, tags, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -107,6 +113,12 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                   <AvField id="user-profile-voice" type="text" name="voice" />
                 </AvGroup>
                 <AvGroup>
+                  <Label id="disciplineLabel" for="user-profile-discipline">
+                    <Translate contentKey="synergyApp.userProfile.discipline">Discipline</Translate>
+                  </Label>
+                  <AvField id="user-profile-discipline" type="text" name="discipline" />
+                </AvGroup>
+                <AvGroup>
                   <Label for="user-profile-season">
                     <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
                   </Label>
@@ -121,6 +133,28 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                     <option value="" key="0" />
                     {seasons
                       ? seasons.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.id}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                <AvGroup>
+                  <Label for="user-profile-tag">
+                    <Translate contentKey="synergyApp.userProfile.tag">Tag</Translate>
+                  </Label>
+                  <AvInput
+                    id="user-profile-tag"
+                    type="select"
+                    multiple
+                    className="form-control"
+                    name="tags"
+                    value={userProfileEntity.tags && userProfileEntity.tags.map(e => e.id)}
+                  >
+                    <option value="" key="0" />
+                    {tags
+                      ? tags.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
                             {otherEntity.id}
                           </option>
@@ -152,6 +186,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
 
 const mapStateToProps = (storeState: IRootState) => ({
   seasons: storeState.season.entities,
+  tags: storeState.tag.entities,
   userProfileEntity: storeState.userProfile.entity,
   loading: storeState.userProfile.loading,
   updating: storeState.userProfile.updating,
@@ -160,6 +195,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   getSeasons,
+  getTags,
   getEntity,
   updateEntity,
   createEntity,
