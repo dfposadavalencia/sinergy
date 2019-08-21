@@ -28,6 +28,7 @@ entity Activity {
     startDate Instant
     endDate Instant
     points Integer
+    status String
 }
 
 entity Tag {

@@ -59,6 +59,9 @@ public class ActivityResourceIT {
     private static final Integer UPDATED_POINTS = 2;
     private static final Integer SMALLER_POINTS = 1 - 1;
 
+    private static final String DEFAULT_STATUS = "AAAAAAAAAA";
+    private static final String UPDATED_STATUS = "BBBBBBBBBB";
+
     @Autowired
     private ActivityRepository activityRepository;
 
@@ -114,7 +117,8 @@ public class ActivityResourceIT {
             .place(DEFAULT_PLACE)
             .startDate(DEFAULT_START_DATE)
             .endDate(DEFAULT_END_DATE)
-            .points(DEFAULT_POINTS);
+            .points(DEFAULT_POINTS)
+            .status(DEFAULT_STATUS);
         return activity;
     }
     /**
@@ -129,7 +133,8 @@ public class ActivityResourceIT {
             .place(UPDATED_PLACE)
             .startDate(UPDATED_START_DATE)
             .endDate(UPDATED_END_DATE)
-            .points(UPDATED_POINTS);
+            .points(UPDATED_POINTS)
+            .status(UPDATED_STATUS);
         return activity;
     }
 
@@ -158,6 +163,7 @@ public class ActivityResourceIT {
         assertThat(testActivity.getStartDate()).isEqualTo(DEFAULT_START_DATE);
         assertThat(testActivity.getEndDate()).isEqualTo(DEFAULT_END_DATE);
         assertThat(testActivity.getPoints()).isEqualTo(DEFAULT_POINTS);
+        assertThat(testActivity.getStatus()).isEqualTo(DEFAULT_STATUS);
     }
 
     @Test
@@ -195,9 +201,10 @@ public class ActivityResourceIT {
             .andExpect(jsonPath("$.[*].place").value(hasItem(DEFAULT_PLACE.toString())))
             .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
             .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())))
-            .andExpect(jsonPath("$.[*].points").value(hasItem(DEFAULT_POINTS)));
+            .andExpect(jsonPath("$.[*].points").value(hasItem(DEFAULT_POINTS)))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
-
+    
     @SuppressWarnings({"unchecked"})
     public void getAllActivitiesWithEagerRelationshipsIsEnabled() throws Exception {
         ActivityResource activityResource = new ActivityResource(activityServiceMock);
@@ -246,7 +253,8 @@ public class ActivityResourceIT {
             .andExpect(jsonPath("$.place").value(DEFAULT_PLACE.toString()))
             .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
             .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE.toString()))
-            .andExpect(jsonPath("$.points").value(DEFAULT_POINTS));
+            .andExpect(jsonPath("$.points").value(DEFAULT_POINTS))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
 
     @Test
@@ -274,7 +282,8 @@ public class ActivityResourceIT {
             .place(UPDATED_PLACE)
             .startDate(UPDATED_START_DATE)
             .endDate(UPDATED_END_DATE)
-            .points(UPDATED_POINTS);
+            .points(UPDATED_POINTS)
+            .status(UPDATED_STATUS);
 
         restActivityMockMvc.perform(put("/api/activities")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -290,6 +299,7 @@ public class ActivityResourceIT {
         assertThat(testActivity.getStartDate()).isEqualTo(UPDATED_START_DATE);
         assertThat(testActivity.getEndDate()).isEqualTo(UPDATED_END_DATE);
         assertThat(testActivity.getPoints()).isEqualTo(UPDATED_POINTS);
+        assertThat(testActivity.getStatus()).isEqualTo(UPDATED_STATUS);
     }
 
     @Test

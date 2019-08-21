@@ -10,6 +10,7 @@ export interface IActivity {
   startDate?: Moment;
   endDate?: Moment;
   points?: number;
+  status?: string;
   challenge?: IChallenge;
   tags?: ITag[];
   agenda?: IAgenda;

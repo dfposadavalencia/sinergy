@@ -20,6 +20,10 @@
         {
             "fieldName": "points",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
         }
     ],
     "relationships": [
