@@ -28,6 +28,10 @@ public class UserProfile implements Serializable {
     @Column(name = "discipline")
     private String discipline;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User user;
+
     @OneToMany(mappedBy = "userProfile")
     private Set<Agenda> agenda = new HashSet<>();
 
@@ -91,6 +95,19 @@ public class UserProfile implements Serializable {
         this.discipline = discipline;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public UserProfile user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Set<Agenda> getAgenda() {
         return agenda;
     }
@@ -127,13 +144,13 @@ public class UserProfile implements Serializable {
 
     public UserProfile addSeason(Season season) {
         this.seasons.add(season);
-        season.getUserProfiles().add(this);
+        season.getUsers().add(this);
         return this;
     }
 
     public UserProfile removeSeason(Season season) {
         this.seasons.remove(season);
-        season.getUserProfiles().remove(this);
+        season.getUsers().remove(this);
         return this;
     }
 
@@ -152,13 +169,13 @@ public class UserProfile implements Serializable {
 
     public UserProfile addTag(Tag tag) {
         this.tags.add(tag);
-        tag.getUserProfiles().add(this);
+        tag.getUsers().add(this);
         return this;
     }
 
     public UserProfile removeTag(Tag tag) {
         this.tags.remove(tag);
-        tag.getUserProfiles().remove(this);
+        tag.getUsers().remove(this);
         return this;
     }
 

@@ -37,7 +37,7 @@ public class Tag implements Serializable {
 
     @ManyToMany(mappedBy = "tags")
     @JsonIgnore
-    private Set<UserProfile> userProfiles = new HashSet<>();
+    private Set<UserProfile> users = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -111,29 +111,29 @@ public class Tag implements Serializable {
         this.activities = activities;
     }
 
-    public Set<UserProfile> getUserProfiles() {
-        return userProfiles;
+    public Set<UserProfile> getUsers() {
+        return users;
     }
 
-    public Tag userProfiles(Set<UserProfile> userProfiles) {
-        this.userProfiles = userProfiles;
+    public Tag users(Set<UserProfile> userProfiles) {
+        this.users = userProfiles;
         return this;
     }
 
-    public Tag addUserProfile(UserProfile userProfile) {
-        this.userProfiles.add(userProfile);
+    public Tag addUser(UserProfile userProfile) {
+        this.users.add(userProfile);
         userProfile.getTags().add(this);
         return this;
     }
 
-    public Tag removeUserProfile(UserProfile userProfile) {
-        this.userProfiles.remove(userProfile);
+    public Tag removeUser(UserProfile userProfile) {
+        this.users.remove(userProfile);
         userProfile.getTags().remove(this);
         return this;
     }
 
-    public void setUserProfiles(Set<UserProfile> userProfiles) {
-        this.userProfiles = userProfiles;
+    public void setUsers(Set<UserProfile> userProfiles) {
+        this.users = userProfiles;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

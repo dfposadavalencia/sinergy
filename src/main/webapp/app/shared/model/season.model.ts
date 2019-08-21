@@ -6,7 +6,7 @@ export interface ISeason {
   name?: string;
   startDate?: Moment;
   endDate?: Moment;
-  userProfiles?: IUserProfile[];
+  users?: IUserProfile[];
 }
 
 export const defaultValue: Readonly<ISeason> = {};

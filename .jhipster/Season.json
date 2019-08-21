@@ -19,7 +19,7 @@
             "relationshipType": "many-to-many",
             "otherEntityName": "userProfile",
             "otherEntityRelationshipName": "season",
-            "relationshipName": "userProfile",
+            "relationshipName": "user",
             "otherEntityField": "id",
             "ownerSide": false
         }

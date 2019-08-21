@@ -32,7 +32,7 @@ public class Season implements Serializable {
 
     @ManyToMany(mappedBy = "seasons")
     @JsonIgnore
-    private Set<UserProfile> userProfiles = new HashSet<>();
+    private Set<UserProfile> users = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -82,29 +82,29 @@ public class Season implements Serializable {
         this.endDate = endDate;
     }
 
-    public Set<UserProfile> getUserProfiles() {
-        return userProfiles;
+    public Set<UserProfile> getUsers() {
+        return users;
     }
 
-    public Season userProfiles(Set<UserProfile> userProfiles) {
-        this.userProfiles = userProfiles;
+    public Season users(Set<UserProfile> userProfiles) {
+        this.users = userProfiles;
         return this;
     }
 
-    public Season addUserProfile(UserProfile userProfile) {
-        this.userProfiles.add(userProfile);
+    public Season addUser(UserProfile userProfile) {
+        this.users.add(userProfile);
         userProfile.getSeasons().add(this);
         return this;
     }
 
-    public Season removeUserProfile(UserProfile userProfile) {
-        this.userProfiles.remove(userProfile);
+    public Season removeUser(UserProfile userProfile) {
+        this.users.remove(userProfile);
         userProfile.getSeasons().remove(this);
         return this;
     }
 
-    public void setUserProfiles(Set<UserProfile> userProfiles) {
-        this.userProfiles = userProfiles;
+    public void setUsers(Set<UserProfile> userProfiles) {
+        this.users = userProfiles;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

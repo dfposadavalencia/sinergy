@@ -26,7 +26,7 @@ export interface ITagUpdateState {
   isNew: boolean;
   idsfield: any[];
   activityId: string;
-  userProfileId: string;
+  userId: string;
 }
 
 export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState> {
@@ -35,7 +35,7 @@ export class TagUpdate extends React.Component<ITagUpdateProps, ITagUpdateState>
     this.state = {
       idsfield: [],
       activityId: '0',
-      userProfileId: '0',
+      userId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }

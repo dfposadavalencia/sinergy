@@ -19,7 +19,7 @@
       "label": "Label",
       "field": "Field",
       "activity": "Activity",
-      "userProfile": "User Profile"
+      "user": "User"
     }
   }
 }

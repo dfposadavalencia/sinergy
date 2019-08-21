@@ -171,7 +171,7 @@ public class SeasonResourceIT {
             .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
             .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())));
     }
-
+    
     @Test
     @Transactional
     public void getSeason() throws Exception {
