@@ -94,15 +94,19 @@ public class ActivityServiceImpl implements ActivityService {
 	    				if (idUser1 != idUser2) {
 	    					for(Tag tag2 : user2tags) {
 	    						if (tag.getLabel().equals(tag2.getLabel())) {
-	    							// 2 persons with the same tag, lets create an activity
-	    							Activity activity = new Activity();
-	    							activity.addTag(tag);
-	    							activity.setName("Pass it on for " + tag.getLabel());
-	    							activity.setPlace("Endava Office");
-	    							activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
-	    							activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
-	    							activity.setStatus("Pending for approval");
-	    							save(activity);
+	    							
+	    							if (!existTagActivity(tag)) {
+	    							
+		    							// 2 persons with the same tag, lets create an activity
+		    							Activity activity = new Activity();
+		    							activity.addTag(tag);
+		    							activity.setName("Pass it on for " + tag.getLabel());
+		    							activity.setPlace("Endava Office");
+		    							activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
+		    							activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
+		    							activity.setStatus(Activity.PENDING);
+		    							save(activity);
+	    							}
 	    						}
 	    					}
 	    					
@@ -119,7 +123,7 @@ public class ActivityServiceImpl implements ActivityService {
 								activity.setPlace("Endava Office");
 								activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
 								activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
-								activity.setStatus("Pending for approval");
+								activity.setStatus(Activity.PENDING);
 								save(activity);
 	    					}
 	    				}
@@ -132,6 +136,21 @@ public class ActivityServiceImpl implements ActivityService {
     	
         log.debug("Request to get all Activities");
         return activityRepository.findAll(pageable);
+    }
+    
+    private boolean existTagActivity(Tag tag) {
+    	List<Activity> activities = activityRepository.findAllWithEagerRelationships();
+    	
+    	for (Activity activity : activities) {
+    		Set<Tag> activityTags = activity.getTags();
+    		for (Tag activityTag : activityTags) {
+    			if (activityTag.getLabel().equals(tag.getLabel()) && activity.getStatus().equals(Activity.PENDING)) {
+    				return true; // there is at least one activity with that tag and the same status
+    			}
+    		}
+    	}
+    	
+    	return false;
     }
 
     /**

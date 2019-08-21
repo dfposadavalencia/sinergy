@@ -16,6 +16,8 @@ import java.util.Set;
 public class Activity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
+    public static final String PENDING = "pending for approval";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
