@@ -1,7 +1,11 @@
 package com.endava.synergy.service.impl;
 
 import com.endava.synergy.service.ActivityService;
+import com.endava.synergy.service.UserProfileService;
+import com.endava.synergy.service.TagService;
 import com.endava.synergy.domain.Activity;
+import com.endava.synergy.domain.Tag;
+import com.endava.synergy.domain.UserProfile;
 import com.endava.synergy.repository.ActivityRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +15,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Service Implementation for managing {@link Activity}.
@@ -20,12 +29,18 @@ import java.util.Optional;
 @Transactional
 public class ActivityServiceImpl implements ActivityService {
 
-    private final Logger log = LoggerFactory.getLogger(ActivityServiceImpl.class);
+	private static Calendar today = Calendar.getInstance();
+	
+	private final Logger log = LoggerFactory.getLogger(ActivityServiceImpl.class);
 
     private final ActivityRepository activityRepository;
+    private final UserProfileService userProfileService;
+    private final TagService tagService;
 
-    public ActivityServiceImpl(ActivityRepository activityRepository) {
+    public ActivityServiceImpl(ActivityRepository activityRepository, UserProfileService userProfileService, TagService tagService) {
         this.activityRepository = activityRepository;
+        this.userProfileService = userProfileService;
+        this.tagService = tagService; 
     }
 
     /**
@@ -49,6 +64,72 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     @Transactional(readOnly = true)
     public Page<Activity> findAll(Pageable pageable) {
+    	
+    	//create recommended activities
+    	Calendar now = Calendar.getInstance();
+    	
+    	if (today.get(Calendar.HOUR_OF_DAY/*DAY_OF_YEAR*/) != now.get(Calendar.HOUR_OF_DAY/*DAY_OF_YEAR*/)) {// only do this if the day is new
+    		today = now;
+    	
+	    	Page<UserProfile> userProfiles = userProfileService.findAll(pageable);
+	    	
+	    	List<UserProfile> list1 =  userProfiles.getContent();
+	    	List<UserProfile> list2 =  userProfiles.getContent();
+	    	
+	    	int i = 0;
+	    	while (i < list1.size()) {
+	    		UserProfile userProfile = list1.get(i);
+	    		Set<Tag> user1tags = userProfile.getTags();
+	    		Long idUser1 = userProfile.getId();
+	    		
+	    		
+	    		for(Tag tag : user1tags) {
+	    			
+	    			int j = i + 1;
+	    			while (j < list2.size()) {
+	    				UserProfile userProfile2 = list2.get(j);
+	    				Set<Tag> user2tags = userProfile2.getTags();
+	    				Long idUser2 = userProfile2.getId();
+	    				
+	    				if (idUser1 != idUser2) {
+	    					for(Tag tag2 : user2tags) {
+	    						if (tag.getLabel().equals(tag2.getLabel())) {
+	    							// 2 persons with the same tag, lets create an activity
+	    							Activity activity = new Activity();
+	    							activity.addTag(tag);
+	    							activity.setName("Pass it on for " + tag.getLabel());
+	    							activity.setPlace("Endava Office");
+	    							activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
+	    							activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
+	    							activity.setStatus("Pending for approval");
+	    							save(activity);
+	    						}
+	    					}
+	    					
+	    					if (userProfile.getVoice().equals(userProfile2.getVoice())) {
+	    						// 2 persons with the same voice, lets create an activity for that voice
+								Activity activity = new Activity();
+								
+								Tag voiceTag = new Tag();
+								voiceTag.setLabel(userProfile.getVoice());
+								tagService.save(voiceTag);
+								
+								activity.addTag(voiceTag);
+								activity.setName("Pass it on for " + userProfile.getVoice());
+								activity.setPlace("Endava Office");
+								activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
+								activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
+								activity.setStatus("Pending for approval");
+								save(activity);
+	    					}
+	    				}
+	    				j++;
+	    			}
+	    		}
+	    		i++;
+	    	}
+    	}
+    	
         log.debug("Request to get all Activities");
         return activityRepository.findAll(pageable);
     }
