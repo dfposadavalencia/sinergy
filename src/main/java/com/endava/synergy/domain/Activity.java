@@ -36,6 +36,9 @@ public class Activity implements Serializable {
     @Column(name = "points")
     private Integer points;
 
+    @Column(name = "status")
+    private String status;
+
     @ManyToOne
     @JsonIgnoreProperties("activities")
     private Challenge challenge;
@@ -124,6 +127,19 @@ public class Activity implements Serializable {
         this.points = points;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public Activity status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public Challenge getChallenge() {
         return challenge;
     }
@@ -201,6 +217,7 @@ public class Activity implements Serializable {
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             ", points=" + getPoints() +
+            ", status='" + getStatus() + "'" +
             "}";
     }
 }

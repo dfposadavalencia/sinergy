@@ -152,6 +152,12 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                   <AvField id="activity-points" type="string" className="form-control" name="points" />
                 </AvGroup>
                 <AvGroup>
+                  <Label id="statusLabel" for="activity-status">
+                    <Translate contentKey="synergyApp.activity.status">Status</Translate>
+                  </Label>
+                  <AvField id="activity-status" type="text" name="status" />
+                </AvGroup>
+                <AvGroup>
                   <Label for="activity-challenge">
                     <Translate contentKey="synergyApp.activity.challenge">Challenge</Translate>
                   </Label>

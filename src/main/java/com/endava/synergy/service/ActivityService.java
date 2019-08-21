@@ -34,7 +34,7 @@ public interface ActivityService {
      * @return the list of entities.
      */
     Page<Activity> findAllWithEagerRelationships(Pageable pageable);
-
+    
     /**
      * Get the "id" activity.
      *

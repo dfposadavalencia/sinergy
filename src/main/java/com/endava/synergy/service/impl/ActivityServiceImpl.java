@@ -61,7 +61,7 @@ public class ActivityServiceImpl implements ActivityService {
     public Page<Activity> findAllWithEagerRelationships(Pageable pageable) {
         return activityRepository.findAllWithEagerRelationships(pageable);
     }
-
+    
 
     /**
      * Get one activity by id.
