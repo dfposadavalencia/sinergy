@@ -182,7 +182,7 @@ public class TagResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(tag.getId().intValue())))
             .andExpect(jsonPath("$.[*].label").value(hasItem(DEFAULT_LABEL.toString())));
     }
-
+    
     @SuppressWarnings({"unchecked"})
     public void getAllTagsWithEagerRelationshipsIsEnabled() throws Exception {
         TagResource tagResource = new TagResource(tagServiceMock);

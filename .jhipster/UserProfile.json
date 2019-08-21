@@ -8,6 +8,10 @@
         {
             "fieldName": "voice",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "discipline",
+            "fieldType": "String"
         }
     ],
     "relationships": [
@@ -22,6 +26,14 @@
             "otherEntityName": "season",
             "otherEntityRelationshipName": "userProfile",
             "relationshipName": "season",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "tag",
+            "otherEntityRelationshipName": "userProfile",
+            "relationshipName": "tag",
             "otherEntityField": "id",
             "ownerSide": true
         }

@@ -61,7 +61,7 @@ public class TagServiceImpl implements TagService {
     public Page<Tag> findAllWithEagerRelationships(Pageable pageable) {
         return tagRepository.findAllWithEagerRelationships(pageable);
     }
-
+    
 
     /**
      * Get one tag by id.

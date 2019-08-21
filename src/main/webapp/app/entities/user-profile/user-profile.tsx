@@ -97,6 +97,9 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
                     <th className="hand" onClick={this.sort('voice')}>
                       <Translate contentKey="synergyApp.userProfile.voice">Voice</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
+                    <th className="hand" onClick={this.sort('discipline')}>
+                      <Translate contentKey="synergyApp.userProfile.discipline">Discipline</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
                     <th />
                   </tr>
                 </thead>
@@ -110,6 +113,7 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
                       </td>
                       <td>{userProfile.grade}</td>
                       <td>{userProfile.voice}</td>
+                      <td>{userProfile.discipline}</td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">
                           <Button tag={Link} to={`${match.url}/${userProfile.id}`} color="info" size="sm">

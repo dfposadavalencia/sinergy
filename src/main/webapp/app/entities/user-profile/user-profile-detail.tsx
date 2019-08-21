@@ -41,6 +41,12 @@ export class UserProfileDetail extends React.Component<IUserProfileDetailProps> 
             </dt>
             <dd>{userProfileEntity.voice}</dd>
             <dt>
+              <span id="discipline">
+                <Translate contentKey="synergyApp.userProfile.discipline">Discipline</Translate>
+              </span>
+            </dt>
+            <dd>{userProfileEntity.discipline}</dd>
+            <dt>
               <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
             </dt>
             <dd>
@@ -49,6 +55,19 @@ export class UserProfileDetail extends React.Component<IUserProfileDetailProps> 
                     <span key={val.id}>
                       <a>{val.id}</a>
                       {i === userProfileEntity.seasons.length - 1 ? '' : ', '}
+                    </span>
+                  ))
+                : null}
+            </dd>
+            <dt>
+              <Translate contentKey="synergyApp.userProfile.tag">Tag</Translate>
+            </dt>
+            <dd>
+              {userProfileEntity.tags
+                ? userProfileEntity.tags.map((val, i) => (
+                    <span key={val.id}>
+                      <a>{val.id}</a>
+                      {i === userProfileEntity.tags.length - 1 ? '' : ', '}
                     </span>
                   ))
                 : null}

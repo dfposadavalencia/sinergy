@@ -61,7 +61,7 @@ public class UserProfileServiceImpl implements UserProfileService {
     public Page<UserProfile> findAllWithEagerRelationships(Pageable pageable) {
         return userProfileRepository.findAllWithEagerRelationships(pageable);
     }
-
+    
 
     /**
      * Get one userProfile by id.

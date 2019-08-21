@@ -34,7 +34,7 @@ public interface TagService {
      * @return the list of entities.
      */
     Page<Tag> findAllWithEagerRelationships(Pageable pageable);
-
+    
     /**
      * Get the "id" tag.
      *
