@@ -7,7 +7,7 @@ export interface ITag {
   label?: string;
   fields?: IField[];
   activities?: IActivity[];
-  userProfiles?: IUserProfile[];
+  users?: IUserProfile[];
 }
 
 export const defaultValue: Readonly<ITag> = {};

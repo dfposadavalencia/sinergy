@@ -47,6 +47,10 @@ export class UserProfileDetail extends React.Component<IUserProfileDetailProps> 
             </dt>
             <dd>{userProfileEntity.discipline}</dd>
             <dt>
+              <Translate contentKey="synergyApp.userProfile.user">User</Translate>
+            </dt>
+            <dd>{userProfileEntity.user ? userProfileEntity.user.id : ''}</dd>
+            <dt>
               <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
             </dt>
             <dd>

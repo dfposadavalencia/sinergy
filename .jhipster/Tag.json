@@ -30,7 +30,7 @@
             "relationshipType": "many-to-many",
             "otherEntityName": "userProfile",
             "otherEntityRelationshipName": "tag",
-            "relationshipName": "userProfile",
+            "relationshipName": "user",
             "otherEntityField": "id",
             "ownerSide": false
         }

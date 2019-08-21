@@ -16,6 +16,14 @@
     ],
     "relationships": [
         {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "userProfile",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
             "relationshipType": "one-to-many",
             "otherEntityName": "agenda",
             "otherEntityRelationshipName": "userProfile",
@@ -24,7 +32,7 @@
         {
             "relationshipType": "many-to-many",
             "otherEntityName": "season",
-            "otherEntityRelationshipName": "userProfile",
+            "otherEntityRelationshipName": "user",
             "relationshipName": "season",
             "otherEntityField": "id",
             "ownerSide": true
@@ -32,7 +40,7 @@
         {
             "relationshipType": "many-to-many",
             "otherEntityName": "tag",
-            "otherEntityRelationshipName": "userProfile",
+            "otherEntityRelationshipName": "user",
             "relationshipName": "tag",
             "otherEntityField": "id",
             "ownerSide": true

@@ -8,6 +8,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { IUser } from 'app/shared/model/user.model';
+import { getUsers } from 'app/modules/administration/user-management/user-management.reducer';
 import { ISeason } from 'app/shared/model/season.model';
 import { getEntities as getSeasons } from 'app/entities/season/season.reducer';
 import { ITag } from 'app/shared/model/tag.model';
@@ -24,6 +26,7 @@ export interface IUserProfileUpdateState {
   isNew: boolean;
   idsseason: any[];
   idstag: any[];
+  userId: string;
 }
 
 export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, IUserProfileUpdateState> {
@@ -32,6 +35,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
     this.state = {
       idsseason: [],
       idstag: [],
+      userId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -47,6 +51,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
       this.props.getEntity(this.props.match.params.id);
     }
 
+    this.props.getUsers();
     this.props.getSeasons();
     this.props.getTags();
   }
@@ -74,7 +79,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
   };
 
   render() {
-    const { userProfileEntity, seasons, tags, loading, updating } = this.props;
+    const { userProfileEntity, users, seasons, tags, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -117,6 +122,21 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                     <Translate contentKey="synergyApp.userProfile.discipline">Discipline</Translate>
                   </Label>
                   <AvField id="user-profile-discipline" type="text" name="discipline" />
+                </AvGroup>
+                <AvGroup>
+                  <Label for="user-profile-user">
+                    <Translate contentKey="synergyApp.userProfile.user">User</Translate>
+                  </Label>
+                  <AvInput id="user-profile-user" type="select" className="form-control" name="user.id">
+                    <option value="" key="0" />
+                    {users
+                      ? users.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.id}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
                 </AvGroup>
                 <AvGroup>
                   <Label for="user-profile-season">
@@ -185,6 +205,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
 }
 
 const mapStateToProps = (storeState: IRootState) => ({
+  users: storeState.userManagement.users,
   seasons: storeState.season.entities,
   tags: storeState.tag.entities,
   userProfileEntity: storeState.userProfile.entity,
@@ -194,6 +215,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getUsers,
   getSeasons,
   getTags,
   getEntity,

@@ -20,14 +20,14 @@ export interface ISeasonUpdateProps extends StateProps, DispatchProps, RouteComp
 
 export interface ISeasonUpdateState {
   isNew: boolean;
-  userProfileId: string;
+  userId: string;
 }
 
 export class SeasonUpdate extends React.Component<ISeasonUpdateProps, ISeasonUpdateState> {
   constructor(props) {
     super(props);
     this.state = {
-      userProfileId: '0',
+      userId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }

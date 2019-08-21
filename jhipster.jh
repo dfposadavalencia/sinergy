@@ -45,6 +45,9 @@ entity Agenda {
     moderatorScoring Integer
 }
 
+relationship OneToOne {
+    UserProfile{user} to User
+}
 
 relationship OneToMany {
     Challenge{activity} to Activity,
@@ -54,10 +57,10 @@ relationship OneToMany {
 }
 
 relationship ManyToMany {
-    UserProfile{season} to Season{userProfile},
+    UserProfile{season} to Season{user},
     Tag{field} to Field{tag},
     Activity{tag} to Tag{activity},
-    UserProfile{tag} to Tag{userProfile}
+    UserProfile{tag} to Tag{user}
 }
 
 // Set pagination options
