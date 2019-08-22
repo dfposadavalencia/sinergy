@@ -138,28 +138,30 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                       : null}
                   </AvInput>
                 </AvGroup>
-                <AvGroup>
-                  <Label for="user-profile-season">
-                    <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
-                  </Label>
-                  <AvInput
-                    id="user-profile-season"
-                    type="select"
-                    multiple
-                    className="form-control"
-                    name="seasons"
-                    value={userProfileEntity.seasons && userProfileEntity.seasons.map(e => e.id)}
-                  >
-                    <option value="" key="0" />
-                    {seasons
-                      ? seasons.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.name}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
+                {false && (
+                  <AvGroup>
+                    <Label for="user-profile-season">
+                      <Translate contentKey="synergyApp.userProfile.season">Season</Translate>
+                    </Label>
+                    <AvInput
+                      id="user-profile-season"
+                      type="select"
+                      multiple
+                      className="form-control"
+                      name="seasons"
+                      value={userProfileEntity.seasons && userProfileEntity.seasons.map(e => e.id)}
+                    >
+                      <option value="" key="0" />
+                      {seasons
+                        ? seasons.map(otherEntity => (
+                            <option value={otherEntity.id} key={otherEntity.id}>
+                              {otherEntity.name}
+                            </option>
+                          ))
+                        : null}
+                    </AvInput>
+                  </AvGroup>
+                )}
                 <AvGroup>
                   <Label for="user-profile-tag">
                     <Translate contentKey="synergyApp.userProfile.tag">Tag</Translate>
