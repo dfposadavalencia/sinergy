@@ -14,6 +14,7 @@
         "activity": "Activity",
         "tag": "Tag",
         "agenda": "Agenda",
+        "field": "Fields",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
