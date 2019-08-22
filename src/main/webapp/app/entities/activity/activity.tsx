@@ -141,7 +141,11 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
                       <td>{activity.status}</td>
                       <td>{activity.challenge ? <Link to={`challenge/${activity.challenge.id}`}>{activity.challenge.id}</Link> : ''}</td>
                       <td>
-                        {activity.userProfile ? <Link to={`user-profile/${activity.userProfile.id}`}>{activity.userProfile.id}</Link> : ''}
+                        {activity.userProfile ? (
+                          <Link to={`user-profile/${activity.userProfile.id}`}>{activity.userProfile.user.email}</Link>
+                        ) : (
+                          ''
+                        )}
                       </td>
                       <td>{activity.agenda ? <Link to={`agenda/${activity.agenda.id}`}>{activity.agenda.id}</Link> : ''}</td>
                       <td className="text-right">

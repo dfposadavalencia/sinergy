@@ -132,7 +132,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                     {users
                       ? users.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.email}
                           </option>
                         ))
                       : null}
