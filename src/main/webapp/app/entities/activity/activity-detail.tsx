@@ -73,6 +73,10 @@ export class ActivityDetail extends React.Component<IActivityDetailProps> {
             </dt>
             <dd>{activityEntity.challenge ? activityEntity.challenge.id : ''}</dd>
             <dt>
+              <Translate contentKey="synergyApp.activity.userProfile">User Profile</Translate>
+            </dt>
+            <dd>{activityEntity.userProfile ? activityEntity.userProfile.id : ''}</dd>
+            <dt>
               <Translate contentKey="synergyApp.activity.tag">Tag</Translate>
             </dt>
             <dd>

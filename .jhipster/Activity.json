@@ -34,6 +34,14 @@
             "otherEntityField": "id"
         },
         {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "userProfile",
+            "otherEntityRelationshipName": "activity",
+            "relationshipName": "userProfile",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
             "relationshipType": "many-to-many",
             "otherEntityName": "tag",
             "otherEntityRelationshipName": "activity",

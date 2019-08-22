@@ -113,6 +113,9 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
                       <Translate contentKey="synergyApp.activity.challenge">Challenge</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th>
+                      <Translate contentKey="synergyApp.activity.userProfile">User Profile</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th>
                       <Translate contentKey="synergyApp.activity.agenda">Agenda</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
@@ -137,6 +140,9 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
                       <td>{activity.points}</td>
                       <td>{activity.status}</td>
                       <td>{activity.challenge ? <Link to={`challenge/${activity.challenge.id}`}>{activity.challenge.id}</Link> : ''}</td>
+                      <td>
+                        {activity.userProfile ? <Link to={`user-profile/${activity.userProfile.id}`}>{activity.userProfile.id}</Link> : ''}
+                      </td>
                       <td>{activity.agenda ? <Link to={`agenda/${activity.agenda.id}`}>{activity.agenda.id}</Link> : ''}</td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">

@@ -47,7 +47,8 @@ entity Agenda {
 }
 
 relationship OneToOne {
-    UserProfile{user} to User
+    UserProfile{user} to User,
+    Activity{userProfile} to UserProfile
 }
 
 relationship OneToMany {

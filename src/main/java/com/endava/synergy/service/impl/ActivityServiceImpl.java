@@ -110,6 +110,21 @@ public class ActivityServiceImpl implements ActivityService {
 		    							activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
 		    							activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
 		    							activity.setStatus(Activity.PENDING);
+
+		    							try{
+                                            UserProfile.Grades grade1 = UserProfile.Grades.valueOf(userProfile.getGrade());
+                                            UserProfile.Grades grade2 = UserProfile.Grades.valueOf(userProfile2.getGrade());
+
+                                            if (grade1.getCode() > grade2.getCode()) {
+                                                activity.setUserProfile(userProfile);
+                                            } else {
+                                                activity.setUserProfile(userProfile2);
+                                            }
+
+                                        } catch (Exception e) {
+		    							    log.error("Error trying to obtaing user grade", e);
+                                        }
+
 		    							save(activity);
 	    							}
 	    						}

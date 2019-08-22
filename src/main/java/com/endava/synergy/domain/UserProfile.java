@@ -15,6 +15,40 @@ public class UserProfile implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public enum Grades {
+
+        JT("Junior Technician",  "JT",   0),
+        TL("Technician",       "TL",   1),
+        ST("Senior Technician",  "ST",   2),
+        EN("Engineer",       "EN",   3),
+        SE("Senior Engineer",  "SE",   4),
+        CL("Consultant",       "CL",   5),
+        SC("Senior Consultant",       "SC",   6);
+
+
+        private final String full;
+        private final String abbr;
+        private final Integer code;
+
+        private Grades(String full, String abbr, Integer code) {
+            this.full = full;
+            this.abbr = abbr;
+            this.code = code;
+        }
+
+        public String getFullName() {
+            return full;
+        }
+
+        public String getAbbreviatedName() {
+            return abbr;
+        }
+
+        public Integer getCode(){
+            return code;
+        }
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
