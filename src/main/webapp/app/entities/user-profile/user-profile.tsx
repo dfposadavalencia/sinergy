@@ -91,6 +91,9 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
                     <th className="hand" onClick={this.sort('id')}>
                       <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
+                    <th>
+                      <Translate contentKey="synergyApp.userProfile.user">User</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
                     <th className="hand" onClick={this.sort('grade')}>
                       <Translate contentKey="synergyApp.userProfile.grade">Grade</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
@@ -99,9 +102,6 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
                     </th>
                     <th className="hand" onClick={this.sort('discipline')}>
                       <Translate contentKey="synergyApp.userProfile.discipline">Discipline</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th>
-                      <Translate contentKey="synergyApp.userProfile.user">User</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -114,10 +114,10 @@ export class UserProfile extends React.Component<IUserProfileProps, IUserProfile
                           {userProfile.id}
                         </Button>
                       </td>
+                      <td>{userProfile.user ? userProfile.user.email : ''}</td>
                       <td>{userProfile.grade}</td>
                       <td>{userProfile.voice}</td>
                       <td>{userProfile.discipline}</td>
-                      <td>{userProfile.user ? userProfile.user.id : ''}</td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">
                           <Button tag={Link} to={`${match.url}/${userProfile.id}`} color="info" size="sm">

@@ -28,7 +28,7 @@ export const EntitiesMenu = props => (
       <Translate contentKey="global.menu.entities.tag" />
     </MenuItem>
     <MenuItem icon="asterisk" to="/entity/field">
-      <Translate contentKey="global.menu.entities.field" />
+      Field
     </MenuItem>
     <MenuItem icon="asterisk" to="/entity/agenda">
       <Translate contentKey="global.menu.entities.agenda" />
