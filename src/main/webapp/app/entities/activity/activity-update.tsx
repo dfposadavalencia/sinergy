@@ -208,7 +208,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                     {tags
                       ? tags.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.label}
                           </option>
                         ))
                       : null}
