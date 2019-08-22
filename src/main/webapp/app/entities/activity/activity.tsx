@@ -142,7 +142,7 @@ export class Activity extends React.Component<IActivityProps, IActivityState> {
                       <td>{activity.challenge ? <Link to={`challenge/${activity.challenge.id}`}>{activity.challenge.id}</Link> : ''}</td>
                       <td>
                         {activity.userProfile ? (
-                          activity.userProfile.user.email ? (
+                          activity.userProfile.user ? (
                             <Link to={`user-profile/${activity.userProfile.id}`}>{activity.userProfile.user.email}</Link>
                           ) : null
                         ) : (
