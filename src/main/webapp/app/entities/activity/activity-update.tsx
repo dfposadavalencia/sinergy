@@ -194,7 +194,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                 </AvGroup>
                 <AvGroup>
                   <Label for="activity-tag">
-                    <Translate contentKey="synergyApp.activity.tag">Tag</Translate>
+                    <Translate contentKey="synergyApp.activity.tag">Preferences</Translate>
                   </Label>
                   <AvInput
                     id="activity-tag"

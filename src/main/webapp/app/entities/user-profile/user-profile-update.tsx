@@ -162,7 +162,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                 </AvGroup>
                 <AvGroup>
                   <Label for="user-profile-tag">
-                    <Translate contentKey="synergyApp.userProfile.tag">Tag</Translate>
+                    <Translate contentKey="synergyApp.userProfile.tag">Preferences</Translate>
                   </Label>
                   <AvInput
                     id="user-profile-tag"
