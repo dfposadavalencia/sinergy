@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -62,7 +61,6 @@ public class ActivityServiceImpl implements ActivityService {
      * @return the list of entities.
      */
     @Override
-    @Transactional(readOnly = true)
     public Page<Activity> findAll(Pageable pageable) {
     	
     	//create recommended activities
@@ -95,7 +93,7 @@ public class ActivityServiceImpl implements ActivityService {
 	    					for(Tag tag2 : user2tags) {
 	    						if (tag.getLabel().equals(tag2.getLabel())) {
 	    							
-	    							if (!existTagActivity(tag)) {
+	    							if (!existTagActivity(tag.getLabel())) {
 	    							
 		    							// 2 persons with the same tag, lets create an activity
 		    							Activity activity = new Activity();
@@ -111,20 +109,23 @@ public class ActivityServiceImpl implements ActivityService {
 	    					}
 	    					
 	    					if (userProfile.getVoice().equals(userProfile2.getVoice())) {
-	    						// 2 persons with the same voice, lets create an activity for that voice
-								Activity activity = new Activity();
-								
-								Tag voiceTag = new Tag();
-								voiceTag.setLabel(userProfile.getVoice());
-								tagService.save(voiceTag);
-								
-								activity.addTag(voiceTag);
-								activity.setName("Pass it on for " + userProfile.getVoice());
-								activity.setPlace("Endava Office");
-								activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
-								activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
-								activity.setStatus(Activity.PENDING);
-								save(activity);
+	    						
+	    						if (!existTagActivity(userProfile.getVoice())) {
+		    						// 2 persons with the same voice, lets create an activity for that voice
+									Activity activity = new Activity();
+									
+									Tag voiceTag = new Tag();
+									voiceTag.setLabel(userProfile.getVoice());
+									tagService.save(voiceTag);
+									
+									activity.addTag(voiceTag);
+									activity.setName("Pass it on for " + userProfile.getVoice());
+									activity.setPlace("Endava Office");
+									activity.setStartDate(Instant.now().plusSeconds(604800));//add a week
+									activity.setEndDate(Instant.now().plusSeconds(604800));//add a week
+									activity.setStatus(Activity.PENDING);
+									save(activity);
+	    						}
 	    					}
 	    				}
 	    				j++;
@@ -137,19 +138,17 @@ public class ActivityServiceImpl implements ActivityService {
         log.debug("Request to get all Activities");
         return activityRepository.findAll(pageable);
     }
-    
-    private boolean existTagActivity(Tag tag) {
+        
+    private boolean existTagActivity(String tagLabel) {
     	List<Activity> activities = activityRepository.findAllWithEagerRelationships();
-    	
     	for (Activity activity : activities) {
     		Set<Tag> activityTags = activity.getTags();
     		for (Tag activityTag : activityTags) {
-    			if (activityTag.getLabel().equals(tag.getLabel()) && activity.getStatus().equals(Activity.PENDING)) {
+    			if (activityTag.getLabel().equals(tagLabel) && activity.getStatus().equals(Activity.PENDING)) {
     				return true; // there is at least one activity with that tag and the same status
     			}
     		}
     	}
-    	
     	return false;
     }
 
