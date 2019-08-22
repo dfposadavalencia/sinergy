@@ -8,29 +8,29 @@ import { NavDropdown } from './menu-components';
 
 export const EntitiesMenu = props => (
   // tslint:disable-next-line:jsx-self-close
-  <NavDropdown icon="th-list" name={translate('global.menu.entities.main')} id="entity-menu">
-    <MenuItem icon="asterisk" to="/entity/user-profile">
+  <NavDropdown icon="th-list" name="Options" id="entity-menu">
+    <MenuItem icon="arrow-alt-right" to="/entity/user-profile">
       <Translate contentKey="global.menu.entities.userProfile" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/user-season">
+    <MenuItem icon="arrow-alt-right" to="/entity/user-season">
       <Translate contentKey="global.menu.entities.userSeason" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/season">
+    <MenuItem icon="arrow-alt-right" to="/entity/season">
       <Translate contentKey="global.menu.entities.season" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/challenge">
+    <MenuItem icon="arrow-alt-right" to="/entity/challenge">
       <Translate contentKey="global.menu.entities.challenge" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/activity">
+    <MenuItem icon="arrow-alt-right" to="/entity/activity">
       <Translate contentKey="global.menu.entities.activity" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/tag">
+    <MenuItem icon="arrow-alt-right" to="/entity/tag">
       <Translate contentKey="global.menu.entities.tag" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/field">
+    <MenuItem icon="arrow-alt-right" to="/entity/field">
       <Translate contentKey="global.menu.entities.field" />
     </MenuItem>
-    <MenuItem icon="asterisk" to="/entity/agenda">
+    <MenuItem icon="arrow-alt-right" to="/entity/agenda">
       <Translate contentKey="global.menu.entities.agenda" />
     </MenuItem>
     {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}

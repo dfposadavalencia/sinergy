@@ -176,7 +176,7 @@ export class UserProfileUpdate extends React.Component<IUserProfileUpdateProps, 
                     {tags
                       ? tags.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.label}
                           </option>
                         ))
                       : null}
