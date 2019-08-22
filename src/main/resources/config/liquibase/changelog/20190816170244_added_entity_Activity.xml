@@ -43,7 +43,9 @@
             <column name="challenge_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-
+            <column name="user_profile_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_activity_user_profile_id" />
+            </column>
             <column name="agenda_id" type="bigint">
                 <constraints nullable="true" />
             </column>

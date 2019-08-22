@@ -17,6 +17,8 @@ public class Activity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public static final String PENDING = "pending for approval";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -42,6 +44,10 @@ public class Activity implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("activities")
     private Challenge challenge;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private UserProfile userProfile;
 
     @ManyToMany
     @JoinTable(name = "activity_tag",
@@ -151,6 +157,19 @@ public class Activity implements Serializable {
 
     public void setChallenge(Challenge challenge) {
         this.challenge = challenge;
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public Activity userProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+        return this;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
 
     public Set<Tag> getTags() {

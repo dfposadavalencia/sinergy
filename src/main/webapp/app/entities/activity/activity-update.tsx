@@ -10,6 +10,8 @@ import { IRootState } from 'app/shared/reducers';
 
 import { IChallenge } from 'app/shared/model/challenge.model';
 import { getEntities as getChallenges } from 'app/entities/challenge/challenge.reducer';
+import { IUserProfile } from 'app/shared/model/user-profile.model';
+import { getEntities as getUserProfiles } from 'app/entities/user-profile/user-profile.reducer';
 import { ITag } from 'app/shared/model/tag.model';
 import { getEntities as getTags } from 'app/entities/tag/tag.reducer';
 import { IAgenda } from 'app/shared/model/agenda.model';
@@ -26,6 +28,7 @@ export interface IActivityUpdateState {
   isNew: boolean;
   idstag: any[];
   challengeId: string;
+  userProfileId: string;
   agendaId: string;
 }
 
@@ -35,6 +38,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
     this.state = {
       idstag: [],
       challengeId: '0',
+      userProfileId: '0',
       agendaId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
@@ -52,6 +56,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
     }
 
     this.props.getChallenges();
+    this.props.getUserProfiles();
     this.props.getTags();
     this.props.getAgenda();
   }
@@ -81,7 +86,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
   };
 
   render() {
-    const { activityEntity, challenges, tags, agenda, loading, updating } = this.props;
+    const { activityEntity, challenges, userProfiles, tags, agenda, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -173,6 +178,21 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
+                  <Label for="activity-userProfile">
+                    <Translate contentKey="synergyApp.activity.userProfile">User Profile</Translate>
+                  </Label>
+                  <AvInput id="activity-userProfile" type="select" className="form-control" name="userProfile.id">
+                    <option value="" key="0" />
+                    {userProfiles
+                      ? userProfiles.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.id}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                <AvGroup>
                   <Label for="activity-tag">
                     <Translate contentKey="synergyApp.activity.tag">Tag</Translate>
                   </Label>
@@ -233,6 +253,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
 
 const mapStateToProps = (storeState: IRootState) => ({
   challenges: storeState.challenge.entities,
+  userProfiles: storeState.userProfile.entities,
   tags: storeState.tag.entities,
   agenda: storeState.agenda.entities,
   activityEntity: storeState.activity.entity,
@@ -243,6 +264,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   getChallenges,
+  getUserProfiles,
   getTags,
   getAgenda,
   getEntity,
