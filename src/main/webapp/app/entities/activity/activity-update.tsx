@@ -186,7 +186,7 @@ export class ActivityUpdate extends React.Component<IActivityUpdateProps, IActiv
                     {userProfiles
                       ? userProfiles.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.user.email}
                           </option>
                         ))
                       : null}
